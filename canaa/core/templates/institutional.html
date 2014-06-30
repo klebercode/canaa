@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block nav_institutional %} class="active"{% endblock %}
+
+{% block content %}
+
+    <div id="maintop-row">
+        <div class="row-container">
+            <div class="container">
+                <div id="maintop" class="row">
+                    <div class="moduletable about span12">
+                        <h2 class="moduleTitle ">Institucional</h2>
+                        <div class="mod-article-single mod-article-single__about">
+                            <div class="item__module">
+                                <h6 class="item-title">
+                                    A Canaã é a empresa mais moderna de polpa de fruta de Brasil, instalada em uma planta de 14.000 m², no município de Goiana-PE.
+                                </h6>
+                                    
+                                <div class="item_introtext">
+                                    <p>Empresa compromissada com o desenvolvimento de seus colaboradores, clientes e meio ambiente. A garantia de qualidade Canaã, lhe proporciona uma segurança alimentar devido a pasteurização de seus produtos como também pela rígida política de seleção e qualidade de sua matéria prima.</p>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="content-row">
+        <div class="row-container">
+            <div class="container">
+                <div class="content-inner row">
+                    <div id="component" class="span9">
+                        <div id="system-message-container">
+                            <div id="system-message">
+                            </div>
+                        </div>
+                        <div class="page-category page-category__about">
+                            <div class="page_header">
+                                <h3>Nossa Missão</h3>
+                            </div>
+                            <div class="category_desc">
+                                <p>Produzir e comercializar alimentos de qualidade, visando a satisfação dos clientes, contribuindo para uma vida saudável, zelando pelo meio ambiente e ser um colaborador do bem-estar da sociedade.</p>
+                                <div class="clr"></div>
+                            </div>
+                            <div class="items-row cols-1 row-0 row-fluid">
+                                <div class="span12">
+                                    <div class="item column-1">
+                                        <h4 class="item_title">Responsabilidade Social</h4>
+                                        <div class="item_introtext">
+                                            <p>Meio Ambiente:<br>
+                                            A responsabilidade Social da Canaã, começa com cuidados ao meio ambiente, tais como a política de conscientização ao produtor de frutas no seu uso controlado de agrotóxicos, ou seja, caso seja necessário seu uso respeitar a quantidade máxima e seu devido tempo de carência.
+                                            Quanto a água de lavagem da empresa, a mesma é devidamente tratada antes de sua liberação para o meio ambiente. E finalmente quanto ao resíduo do despolpamento das frutas, as mesmas são devidamente tratadas e reutilizadas como adubo orgânico.</p>
+
+                                            <p>Funcionários:<br>
+                                            Zelamos pelo seu bem estar, ou seja oferecendo condições adequadas ao pleno desenvolvimento de suas funções. Como também fazendo o devido acompanhamento de sua saúde (consultas e exames médicos regulares) além de fazer exercício físico periódico na empresa.</p>
+
+                                            <p>Sociedade:<br>
+                                            Sempre preocupados em fazer nossa parte para plantarmos um futuro melhor para todos. Fazemos doações regulares para creches, abrigos e associações filantrópicas.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="items-row cols-1 row-1 row-fluid">
+                                <div class="span6">
+                                    <div class="item column-1">
+                                        <div class="item_img img-intro img-intro__left">
+                                            <!--<a href="#">
+                                                <canvas style="position: absolute; top: 0px; left: 0px; display: none; width: 268px; height: 142px;" class="BWfade" width="268" height="142"></canvas>-->
+                                                <img src="{{ STATIC_URL }}images/institutional/creche01.jpg" alt="">
+                                            <!--</a>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span6">
+                                    <div class="item column-1">
+                                        <div class="item_img img-intro img-intro__right">
+                                            <!--<a href="#">
+                                                <canvas style="position: absolute; top: 0px; left: 0px; display: none; width: 268px; height: 142px;" class="BWfade" width="268" height="142"></canvas>-->
+                                                <img src="{{ STATIC_URL }}images/institutional/creche02.jpg" alt="">
+                                            <!--</a>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="aside-right" class="span3">
+                        <aside>
+                            <div class="moduletable sidebar">
+                                <div class="mod-newsflash-adv mod-newsflash-adv__sidebar">
+                                    <div class="item item_num0 item__module ">
+                                        <h3 class="item_title item_title__sidebar">Clientes</h3>
+                                        <div class="item_img img-intro img-intro__costumers"> 
+                                            <img src="{{ STATIC_URL }}images/costumers/bonanza.jpg" alt="">
+                                            <img src="{{ STATIC_URL }}images/costumers/carrefour.jpg" alt="">
+                                            <img src="{{ STATIC_URL }}images/costumers/bompreco.jpg" alt="">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="push"></div>
+    
+{% endblock content %}

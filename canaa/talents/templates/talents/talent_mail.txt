@@ -1,0 +1,11 @@
+Você recebeu o seguinte currículo através do site da Fipel:
+
+Nome: {{ name }}
+Fone: {{ phone }}
+E-mail: {{ email }}
+
+Para ver o restante das informações e outros currículos:
+1 - Acesse: http://fipel.ind.br/admin
+2 - Digite seu login e senha
+3 - Entre no menu Talentos 
+4 - Gerencie todos os currículos

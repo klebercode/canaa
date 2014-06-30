@@ -1,0 +1,85 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 32px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#section-kmt .kmt-form-content .kmt-form-addon > div .input.kmt-location {
+  max-width: 1000px !important;
+}
+.gallery-item .view .mask,
+.gallery-item .view .content {
+  display: none;
+}
+.gallery-item .view:hover .mask,
+.gallery-item .view:hover .content {
+  display: block;
+}
+#contact_map {
+  height: 376px;
+}
+ul.gallery {
+  margin-left: -20px;
+}
+ul.gallery .gallery-item {
+  padding-left: 20px;
+}
+.created p br {
+  display: none;
+}
+.social li + li {
+  margin-left: 1px;
+}
+.footer_menu .mod-menu .nav.menu li + li {
+  margin-left: 16px;
+  padding-left: 16px;
+}
+.top_blocks .item_introtext {
+  padding-left: 0;
+  padding-right: 0;
+}
+.about {
+  padding-left: 400px;
+  padding-right: 80px;
+}
+#content-row .content-inner > div:first-child {
+  padding-left: 80px;
+}
+#content-row .content-inner > div + div {
+  padding-right: 80px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#content-row .content-inner > div.span12 {
+  padding-right: 80px;
+}
+.page-category__about .row-1 .item p {
+  padding-bottom: 5px;
+}
+#back-top a {
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
