@@ -51,7 +51,7 @@ h6 a:hover {
   color: #486E8A; /*#ff4e3d;*/
 }
 h1 {
-  font-family: 'Bevan', cursive;
+  font-family: 'Oswald', 'Pathway Gothic One', 'Bevan', cursive;
   color: #fff;
   font-weight: normal;
   font-size: 56px;
@@ -59,15 +59,18 @@ h1 {
   margin-bottom: 20px;
 }
 h2 {
-  font-family: 'Bevan', cursive;
+  font-family: 'Oswald', 'Pathway Gothic One', 'Bevan', cursive;
   color: #fff;
   font-weight: normal;
   font-size: 48px;
   line-height: 55px;
   margin-bottom: 18px;
 }
+.banner h2 {
+  font-family: 'Lemon', cursive;
+}
 h3 {
-  font-family: 'Bevan', cursive;
+  font-family: 'Oswald', 'Pathway Gothic One', 'Bevan', cursive;
   color: #2f2f2f;
   font-weight: normal;
   font-size: 36px;
@@ -76,14 +79,14 @@ h3 {
 h4 {
   color: #616161;
   font-weight: normal;
-  font-family: 'Bevan', cursive;
+  font-family: 'Oswald', 'Pathway Gothic One', 'Bevan', cursive;
   font-size: 26px;
   line-height: 32px;
   margin: 0 0 24px;
   font-style: normal;
 }
 h5 {
-  font-family: 'Bevan', cursive;
+  font-family: 'Oswald', 'Pathway Gothic One', 'Bevan', cursive;
   color: #fff;
   font-weight: normal;
   font-size: 24px;
@@ -1034,7 +1037,7 @@ blockquote small {
   text-align: center;
   border: 4px solid #486E8A; /*#ff4e3d;*/
   color: #7c7c7c;
-  font-family: 'Bevan', cursive;
+  font-family: 'Oswald', 'Pathway Gothic One', 'Bevan', cursive;
   text-transform: uppercase;
   margin-right: 12px;
 }
@@ -1061,7 +1064,7 @@ blockquote small {
   border-radius: 10px;
   background: #ff4e3d;
   color: #fff;
-  font-family: 'Bevan', cursive;
+  font-family: 'Oswald', 'Pathway Gothic One', 'Bevan', cursive;
   font-size: 36px;
   position: relative;
   display: block;
@@ -1201,7 +1204,7 @@ blockquote small {
 }
 #copyright {
   color: #fff;
-  font-family: 'Bevan', cursive;
+  font-family: 'Oswald', 'Pathway Gothic One', 'Bevan', cursive;
   font-size: 18px;
 }
 #copyright .year:after {
