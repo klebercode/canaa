@@ -53,11 +53,11 @@
    transition: all 0.2s ease-in-out;
 }
 .gallery-item.style2 .view .item_more {
-   -webkit-transform: translate(0px, 100px);
-   -moz-transform: translate(0px, 100px);
-   -o-transform: translate(0px, 100px);
-   -ms-transform: translate(0px, 100px);
-   transform: translate(0px, 100px);
+   -webkit-transform: translate(0px, 150px);
+   -moz-transform: translate(0px, 150px);
+   -o-transform: translate(0px, 150px);
+   -ms-transform: translate(0px, 150px);
+   transform: translate(0px, 150px);
    -webkit-transition: all 0.2s 0.1s ease-in-out;
    -moz-transition: all 0.2s 0.1s ease-in-out;
    -o-transition: all 0.2s 0.1s ease-in-out;
