@@ -31,11 +31,11 @@ def blog(request):
     #     posts = paginator.page(1)
     # except EmptyPage:
     #     posts = paginator.page(paginator.num_pages)
-    
+
     # context['posts'] = posts
     # context['search'] = search
 
-    # return render(request, 'blog/blog.html', context, 
+    # return render(request, 'blog/blog.html', context,
     #     context_instance=RequestContext(request, processors=[enterprise_proc, contact_proc]))
     return render(request, 'blog/blog.html', context)
 
@@ -46,7 +46,7 @@ def post(request, slug):
     #     'post': post,
     # }
 
-    # return render(request, 'blog/post.html', context, 
+    # return render(request, 'blog/post.html', context,
     #     context_instance=RequestContext(request, processors=[enterprise_proc, contact_proc]))
     context = {}
     return render(request, 'blog/post.html', context)

@@ -4,7 +4,7 @@ from django.views.generic.base import TemplateView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 
-# from forms import * 
+# from forms import *
 
 def home(request):
     context = {}
@@ -37,7 +37,7 @@ def products(request):
 def sellers(request):
     context = {}
 
-    return render(request, 'seller.html', context)
+    return render(request, 'sellers.html', context)
 
 
 def marketing(request):
