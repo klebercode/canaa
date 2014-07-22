@@ -1,7 +1,7 @@
-# coding: utf-8 
+# coding: utf-8
 from django.conf.urls import patterns, url
 
-from canaa.blog.views import *
+from canaa.blog.views import blog, post
 
 
 urlpatterns = patterns('canaa.blog.views',

@@ -1,6 +1,0 @@
-@font-face {
-  font-family: 'Bevan';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Bevan'), url(http://themes.googleusercontent.com/static/fonts/bevan/v5/kZxOvEFDTL6rhtQAWC2LTw.woff) format('woff');
-}

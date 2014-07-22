@@ -4,108 +4,61 @@
 
 {% block content %}
 
-    <div id="content-row">
-        <div class="row-container">
-            <div class="container">
-                <div class="content-inner row">
-                    <div id="component" class="span12">
-                        <div id="system-message-container">
-                            <div id="system-message"></div>
+    <div class="k-content">
+        <div class="row-fluid">
+            <h3>Contato</h3>
+            <!-- Map -->
+            <div class="contact_map" id="contact_map">
+                <div class="k-top" id="maps"></div>
+            </div>
+            <!-- Address -->
+            <div class="row-fluid marg30-top">
+                <div class="contact-details">
+                    <div class="span4">
+                        <h3>Endereço</h3>
+                        <i class="icons-marker icon-home"></i>
+                        <div class="contact-address">
+                            138 Atlantis Ln<br>
+                            Kingsport<br>
+                            Illinois 121164<br>
                         </div>
-                        <div class="page page-contact page-contact__">
-                            <div class="page_header">
-                                <h3><span class="item_title_part0">Contato</span> </h3>
-                            </div>
-                            <!-- Map -->
-                            <div class="contact_map" id="contact_map">
-                                <div id="maps"></div>
-                            </div>
-                            <!-- Address -->
-                            <div class="row-fluid">
-                                <div class="contact_details">
-                                    <div class="contact_details_item span4">
-                                        <h3>Endereço</h3>
-                                        <i class="icons-marker icon-home"></i>
-                                        <div class="contact_address">
-                                            138 Atlantis Ln<br>
-                                            Kingsport<br>
-                                            Illinois 121164<br>
-                                        </div>
-                                    </div>
-                                    <div class="contact_details_item span4">
-                                        <h3>Fone</h3>
-                                        <i class="icons-marker icon-phone"></i>
-                                        <div class="contact_details_telephone">+1 800 559 6580</div>			
-                                        <div class="clearfix"></div>
-                                        <i class="icons-marker icon-print"></i>
-                                        <div class="contact_details_fax">+1 504 889 9898</div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="contact_details_item span4">
-                                        <h3>E-mail</h3>
-                                        <i class="icons-marker icon-envelope"></i>
-                                        <div class="contact_details_emailto"><span>mail@demolink.org</span></div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Misc -->
-                        <div class="contact_misc">
-                            <h3>Envie uma mensagem</h3>
-                        </div>
-                        <!-- Form -->
-                        <div class="contact_form">
-                            <form id="contact-form" action="/joomla_48261/index.php/contacts" method="post" class="form-
-                            validate">
-                                <fieldset>
-                                    <!-- <legend></legend> -->
-                                    <p><i class="muted">Todos os campos são de preenchimento obrigatório.</i></p>
-                                    <div class="clearfix"></div>
-                                    <div class="row-fluid">
-                                        <div class="span6">
-                                            <label data-original-title="<strong>Nome</strong><br />Seu nomemot" id="jform_contact_name-lbl" for="jform_contact_name" class="hasTooltip required" title="">
-                                                Nome<span class="star">&nbsp;*</span>
-                                            </label>
-                                            <div class="controls">
-                                                <input name="jform[contact_name]" id="jform_contact_name" value="" size="30" required="" aria-required="true" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="span6">
-                                            <label data-original-title="<strong>E-mail</strong><br />E-mail para contato" id="jform_contact_email-lbl" for="jform_contact_email" class="hasTooltip required" title="">
-                                                E-mail<span class="star">&nbsp;*</span>
-                                            </label>
-                                            <div class="controls">
-                                                <input name="jform[contact_email]" class="validate-email" id="jform_contact_email" value="" size="30" required="" aria-required="true" type="email">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row-fluid">
-                                        <div class="span12">
-                                            <label data-original-title="<strong>Mensagem</strong><br />Digite sua mensagem aqui." id="jform_contact_message-lbl" for="jform_contact_message" class="hasTooltip required" title="">
-                                                Mensagem<span class="star">&nbsp;*</span>
-                                            </label>
-                                            <div class="controls">
-                                                <textarea name="jform[contact_message]" id="jform_contact_message" cols="50" rows="10" required="" aria-required="true"></textarea>
-                                            </div>
-                                            <div class="control-group">
-                                                <div class="controls"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="controls">
-                                        <button class="btn validate btn-primary pull-right" type="submit">Enviar Mensagem</button>
-                                    </div>
-                                </fieldset>
-                            </form>
-                        </div>
+                    </div>
+                    <div class="span4">
+                        <h3>Fone</h3>
+                        <i class="icons-marker icon-phone"></i>
+                        <div>+1 800 559 6580</div>
+                        <i class="icons-marker icon-print"></i>
+                        <div>+1 504 889 9898</div>
+                    </div>
+                    <div class="span4">
+                        <h3>E-mail</h3>
+                        <i class="icons-marker icon-envelope"></i>
+                        <div><span>mail@demolink.org</span></div>
                     </div>
                 </div>
             </div>
+            <div class="row-fluid marg30-top">
+                <!-- Message -->
+                <h3>Envie uma mensagem</h3>
+                <!-- Form -->
+                <form role="form">
+                    <div class="controls span6">
+                        <label for="id_name">Nome</label>
+                        <input type="text" class="span12" id="id_name" placeholder="Nome">
+                    </div>
+                    <div class="controls span6 pull-right">
+                        <label for="id_email">Email</label>
+                        <input type="email" class="span12" id="id_email" placeholder="Email">
+                    </div>
+                    <div class="controls">
+                        <label for="id_message">Mensagem</label>
+                        <textarea class="span12" id="id_message" name="message" placeholder="Mensagem" rows="6"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-info">Enviar Mensagem</button>
+                </form>
+            </div>
         </div>
     </div>
-    <div id="push"></div>
 
 {% endblock content %}
 

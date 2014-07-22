@@ -4,78 +4,46 @@
 
 {% block content %}
 
-    <div id="content-row">
-        <div class="row-container">
-            <div class="container">
-                <div class="content-inner row">
-                    <div id="component" class="span12">
-                        <div id="system-message-container">
-                            <div id="system-message"></div>
-                        </div>
-                        <div class="page page-contact page-contact__">
-                            <div class="page_header">
-                                <h3><span class="item_title_part0">Trabalhe Conosco</span></h3>
+    <div class="k-content">
+        <div class="row-fluid">
+            <h3>Trabalhe Conosco</h3>
+            <img class="k-top" src="{{ STATIC_URL }}img/trabalhe_conosco_canaa.jpg">
+        </div>
+        <!-- Curriculo -->
+        <div class="row-fluid marg30-top">
+            <div class="contact-details">
+                <div class="span7">
+                    <h3>Envie seu currículo</h3>
+                    <form enctype="multipart/form-data" method="post" action="." role="form">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div class="controls">
+                                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                {{ field }}
+                                {{ field.errors }}
                             </div>
-                            <div style="width: 100%; padding-bottom: 40px;">
-                                <img src="{{ STATIC_URL }}images/trabalhe_conosco_canaa.jpg" style="border: 1px solid #e1e1e1;">
-                            </div>
-                            <!-- Address -->
-                            <div class="row-fluid">
-                                <div class="contact_details">
-                                    <div class="contact_details_item span7">
-                                        <h3>Envie seu currículo</h3>
-
-                                        <div class="contact_address talent-form">
-                                            <form enctype="multipart/form-data" method="post" action="." class="form-validate">
-                                                {% csrf_token %}
-                                                <fieldset>
-                                                    <!-- <legend></legend> -->
-                                                    {% for field in form %}
-                                                        <div class="row-fluid">
-                                                            <div class="span12">
-                                                                <div id="talent-form" class="control-group{% if field.errors %} error{% endif %}">
-                                                                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                                    <div id="{{ field.id_for_label }}" class="controls">
-                                                                        {{ field }}
-                                                                        {{ field.errors }}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    {% endfor %}
-                                                    <div class="controls">
-                                                        <button name="enviar" class="btn validate btn-primary pull-right" type="submit">Enviar Currículo</button>
-                                                    </div>
-                                                </fieldset>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="contact_details_item span1">
-                                    </div>
-                                    <div class="contact_details_item span4">
-                                        <h3>Contato</h3>
-                                        <i class="icons-marker icon-home"></i>
-                                        <div class="contact_address">
-                                            138 Atlantis Ln<br>
-                                            Kingsport<br>
-                                            Illinois 121164<br>
-                                        </div>
-                                        <i class="icons-marker icon-phone"></i>
-                                        <div class="contact_details_telephone">+1 800 559 6580</div>
-                                        <i class="icons-marker icon-print"></i>
-                                        <div class="contact_details_fax">+1 504 889 9898</div>
-                                        <i class="icons-marker icon-envelope"></i>
-                                        <div class="contact_details_emailto"><span>mail@demolink.org</span></div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
+                        <button name="enviar" class="btn validate btn-primary" type="submit">Enviar Currículo</button>
+                    </form>
+                </div>
+                <div class="span1"></div>
+                <div class="span4">
+                    <h3>Contato</h3>
+                    <i class="icons-marker icon-home"></i>
+                    <div class="contact-address">
+                        138 Atlantis Ln<br>
+                        Kingsport<br>
+                        Illinois 121164<br>
                     </div>
+                    <i class="icons-marker icon-phone"></i>
+                    <div>+1 800 559 6580</div>
+                    <i class="icons-marker icon-print"></i>
+                    <div>+1 504 889 9898</div>
+                    <i class="icons-marker icon-envelope"></i>
+                    <div><span>mail@demolink.org</span></div>
                 </div>
             </div>
         </div>
     </div>
-    <div id="push"></div>
 
 {% endblock content %}

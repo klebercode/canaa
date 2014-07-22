@@ -1,4 +1,6 @@
 # coding: utf-8
+"""teste"""
+
 from django.shortcuts import render, get_object_or_404
 from django.views.generic.base import TemplateView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -6,10 +8,11 @@ from django.db.models import Q
 from django.template import RequestContext
 
 # from fipel.context_processors import enterprise_proc, contact_proc
-# from fipel.revenue.models import *
+# from fipel.revenue.models import *FIELDNAME = models.SmallIntegerField()
 
 
 def blog(request):
+    """blog"""
     context = {}
 
     # posts_list = Post.objects.all()
@@ -36,17 +39,22 @@ def blog(request):
     # context['search'] = search
 
     # return render(request, 'blog/blog.html', context,
-    #     context_instance=RequestContext(request, processors=[enterprise_proc, contact_proc]))
+    #     context_instance=RequestContext(request,
+    #                                     processors=[enterprise_proc,
+    #                                     contact_proc]))
     return render(request, 'blog/blog.html', context)
 
 
 def post(request, slug):
+    """post"""
     # post = get_object_or_404(Post, slug=slug)
     # context = {
     #     'post': post,
     # }
 
     # return render(request, 'blog/post.html', context,
-    #     context_instance=RequestContext(request, processors=[enterprise_proc, contact_proc]))
+    #     context_instance=RequestContext(request,
+    #                                     processors=[enterprise_proc,
+    #                                     contact_proc]))
     context = {}
     return render(request, 'blog/post.html', context)

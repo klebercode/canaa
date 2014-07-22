@@ -1,186 +1,125 @@
 {% extends "base.html" %}
 
-{% block bg_banner %}bg-banner {% endblock %}
-
 {% block content %}
-
-    <div id="navigation-row">
-        <div class="row-container">
-            <div class="container">
-                <div class="row">
-                    <nav>
-                        <div class="moduletable created banner span12">
-                            <h2 class="moduleTitle ">
-                                <span class="item_title_part0">O Sabor</span> <span class="item_title_part1">da Natureza,</span> <br> <span class="item_title_part2">Polpas</span> <span class="item_title_part3">de Fruta</span> <span class="item_title_part4">Canaã.</span> 
-                            </h2>
-                            <div class="mod-article-single mod-article-single__created">
-                                <div class="item__module">
-                                    <div class="item_introtext">
-                                        <!--<p>A Canaã foi fundada em agosto de 1995 na cidade de Macaparana/PE. <br> Porém o grupo já trabalhava com frutas a mais de 5 anos.</p>-->
-                                        <a class="btn btn-info readmore" href="{% url 'institutional' %}"><span>conheça nossa empresa</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
+    <!-- begin:home-slider -->
+    <div class="row-fluid">
+        <div class="k-created banner span12">
+            <h1>
+                <span>O Sabor da Natureza,</span><br>
+                <span>Polpas de Fruta Canaã.</span>
+            </h1>
+            <a class="btn btn-info" href="/institucional/"><span>conheça nossa empresa</span></a>
         </div>
     </div>
+    <!-- end:home-slider -->
 
-    <div id="showcase-row">
-        <div class="row-container">
-            <div class="container">
-                <div class="row">
-                    <div class="moduletable top_blocks span12">
-                        <div class="mod-newsflash-adv mod-newsflash-adv__top_blocks">
-                            <div class="row">
-                                <div class="span3 item item_num0 item__module">
-                                    <div class="item_img img-intro img-intro__none">
-                                        <a href="#">
-                                            <img src="{{ STATIC_URL }}images/polpa_canaa_manga.jpg" alt="" style="width: 140px;">
-                                        </a>
-                                    </div>
-                                    <div class="item_content item_num0"> 
-                                        <h4 class="item_title item_title__top_blocks">
-                                            <a href="#">Manga</a>
-                                        </h4>
-                                        <div class="item_introtext">
-                                            <p>Nertyase riertases lertyarssety kertyace aseteras aplicaboes kerti.</p>
-                                        </div>
-                                        <a class="btn btn-info readmore" href="#"><span>veja mais</span></a>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            
-                                <div class="span3 item item_num1 item__module">
-                                    <div class="item_img img-intro img-intro__none">
-                                        <a href="#">
-                                            <img src="{{ STATIC_URL }}images/polpa_canaa_manga.jpg" alt="" style="width: 140px;">
-                                        </a>
-                                    </div>
-                                    <div class="item_content">
-                                        <h4 class="item_title item_title__top_blocks">
-                                            <a href="#">Manga</a>
-                                        </h4>
-                                        <div class="item_introtext">
-                                            <p>Nertyase riertases lertyarssety kertyace aseteras aplicaboes kerti.</p>
-                                        </div>
-                                        <a class="btn btn-info readmore" href="#"><span>veja mais</span></a>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                
-                                <div class="span3 item item_num2 item__module">
-                                    <div class="item_img img-intro img-intro__none">
-                                        <a href="#">
-                                            <img src="{{ STATIC_URL }}images/polpa_canaa_manga.jpg" alt="" style="width: 140px;">
-                                        </a>
-                                    </div>
-                                    <div class="item_content">
-                                        <h4 class="item_title item_title__top_blocks">
-                                            <a href="#">Manga</a>
-                                        </h4>
-                                        <div class="item_introtext">
-                                            <p>Nertyase riertases lertyarssety kertyace aseteras aplicaboes kerti.</p>
-                                        </div>
-                                        <a class="btn btn-info readmore" href="#"><span>veja mais</span></a>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                
-                                <div class="span3 item item_num3 item__module lastItem">
-                                    <div class="item_img img-intro img-intro__none">
-                                        <a href="#">
-                                            <img src="{{ STATIC_URL }}images/polpa_canaa_manga.jpg" alt="" style="width: 140px;">
-                                        </a>
-                                    </div>
-                                    <div class="item_content">
-                                        <h4 class="item_title item_title__top_blocks">
-                                            <a href="#">Manga</a>
-                                        </h4>
-                                        <div class="item_introtext">
-                                            <p>Nertyase riertases lertyarssety kertyace aseteras aplicaboes kerti.</p>
-                                        </div>
-                                        <a class="btn btn-info readmore" href="#"><span>veja mais</span></a>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
+    <!-- begin:item -->
+    <div class="row-fluid k-prod">
+
+        <div class="span3 k-item k-item_num0">
+            <div class="k-item_img">
+                <a href="#">
+                    <img src="{{ STATIC_URL }}/img/media/polpa_canaa_manga.jpg" alt="" style="width: 140px;">
+                </a>
+            </div>
+            <div class="k-item_content k-item_num0">
+                <h4><a href="#">Manga</a></h4>
+                <div class="k-item_introtext">
+                    <p>Nertyase riertases lertyarssety kertyace aseteras aplicaboes kerti.</p>
+                </div>
+                <a class="btn btn-k-item_num0 btn-small" href="#"><span>veja mais</span></a>
+            </div>
+        </div>
+        <div class="span3 k-item k-item_num1">
+            <div class="k-item_img">
+                <a href="#">
+                    <img src="{{ STATIC_URL }}/img/media/polpa_canaa_manga.jpg" alt="" style="width: 140px;">
+                </a>
+            </div>
+            <div class="k-item_content k-item_num1">
+                <h4><a href="#">Manga</a></h4>
+                <div class="k-item_introtext">
+                    <p>Nertyase riertases lertyarssety kertyace aseteras aplicaboes kerti.</p>
+                </div>
+                <a class="btn btn-k-item_num1 btn-small" href="#"><span>veja mais</span></a>
+            </div>
+        </div>
+        <div class="span3 k-item k-item_num2">
+            <div class="k-item_img">
+                <a href="#">
+                    <img src="{{ STATIC_URL }}/img/media/polpa_canaa_manga.jpg" alt="" style="width: 140px;">
+                </a>
+            </div>
+            <div class="k-item_content k-item_num2">
+                <h4><a href="#">Manga</a></h4>
+                <div class="k-item_introtext">
+                    <p>Nertyase riertases lertyarssety kertyace aseteras aplicaboes kerti.</p>
+                </div>
+                <a class="btn btn-k-item_num2 btn-small" href="#"><span>veja mais</span></a>
+            </div>
+        </div>
+        <div class="span3 k-item k-item_num3">
+            <div class="k-item_img">
+                <a href="#">
+                    <img src="{{ STATIC_URL }}/img/media/polpa_canaa_manga.jpg" alt="" style="width: 140px;">
+                </a>
+            </div>
+            <div class="k-item_content k-item_num3">
+                <h4><a href="#">Manga</a></h4>
+                <div class="k-item_introtext">
+                    <p>Nertyase riertases lertyarssety kertyace aseteras aplicaboes kerti.</p>
+                </div>
+                <a class="btn btn-k-item_num3 btn-small" href="#"><span>veja mais</span></a>
+            </div>
+        </div>
+
+    </div>
+    <!-- end:item -->
+
+    <!-- begin:content -->
+    <div class="row-fluid k-blog">
+        <!-- begin:blog -->
+        <div class="span3 k-item">
+            <div class="k-item_img">
+                <a href="http://localhost:8000/mais-saude/post">
+                    <img src="http://www.jookle.com.br/demos/canaa/vermelhas2.jpg" alt="">
+                </a>
+            </div>
+            <div class="k-item_content">
+                    <h3>O Poder das Frutas Vermelhas</h3>
+                <div class="k-item_introtext">
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt adipiscing elit.</p>
+                </div>
+                <a class="btn btn-red btn-small" href="http://localhost:8000/mais-saude/post"><span>veja mais</span></a>
+            </div>
+        </div>
+        <div class="span3 k-item">
+            <div class="k-item_img">
+                <a href="http://localhost:8000/mais-saude/post">
+                    <img src="http://www.jookle.com.br/demos/canaa/maca.jpg" alt="">
+                </a>
+            </div>
+            <div class="k-item_content">
+                <h3>Conheça os 10 Benefícios da Maçã</h3>
+                <div class="k-item_introtext">
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt adipiscing elit.</p>
+                </div>
+                <a class="btn btn-red btn-small" href="http://localhost:8000/mais-saude/post"><span>veja mais</span></a>
+            </div>
+        </div>
+        <div class="moduletable k-offer span6">
+            <h1 class="moduleTitle ">Refresco Em Pó Natural</h1>
+            <div class="mod-article-single mod-article-single__offer">
+                <div class="item__module">
+                    <div class="item_introtext">
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
+                        <a class="btn btn-danger" href="/produtos/"><span>conheça nossa linha de refresco em pó</span></a>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- end:blog -->
+
     </div>
-
-    <div id="feature-row">
-        <div class="row-container">
-            <div class="container">
-                <div class="row">
-                    <div class="moduletable blocks span6">
-                        <div class="mod-newsflash-adv mod-newsflash-adv__blocks">
-                            <div class="row">
-                                <div class="span3 item item_num0 item__module">
-                                    <div class="item_img img-intro img-intro__none">
-                                        <a href="#">
-                                            <canvas style="position: absolute; top: 0px; left: 0px; width: 191px; height: 191px; display: none;" class="BWfade" width="191" height="191"></canvas>
-                                            <img src="http://www.jookle.com.br/demos/canaa/vermelhas2.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="item_content">
-                                            <h3 class="item_title item_title__blocks">
-                                            <span class="item_title_part0">O Poder</span> <span class="item_title_part1">das</span> <span class="item_title_part2">Frutas</span> <span class="item_title_part3">Vermelhas</span> 
-                                        </h3>
-                                        <div class="item_introtext">
-                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt adipiscing elit.</p>
-                                        </div>
-                                        <a class="btn btn-info readmore" href="#"><span>Veja mais</span></a>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-
-                                <div class="span3 item item_num1 item__module lastItem">
-                                    <div class="item_img img-intro img-intro__none">
-                                        <a href="#">
-                                            <canvas style="position: absolute; top: 0px; left: 0px; width: 191px; height: 191px; display: none;" class="BWfade" width="191" height="191"></canvas>
-                                            <img src="http://www.jookle.com.br/demos/canaa/maca.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="item_content">
-                                        <h3 class="item_title item_title__blocks">
-                                            <span class="item_title_part0">Conheça</span> <span class="item_title_part1">os 10</span> <span class="item_title_part2">Benefícios</span> <span class="item_title_part3">da Maçã</span>
-                                        </h3>
-                                        <div class="item_introtext">
-                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt adipiscing elit.</p>
-                                        </div>
-                                        <a class="btn btn-info readmore" href="#"><span>Veja mais</span></a>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-
-                    <div class="moduletable offer span6">
-                        <h1 class="moduleTitle ">
-                            <span class="item_title_part0">Refresco</span><br> <span class="item_title_part1">Em</span> <span class="item_title_part2">Pó</span> <span class="item_title_part3"></span> <span class="item_title_part4">Natural</span>
-                        </h1>
-                        <div class="mod-article-single mod-article-single__offer">
-                            <div class="item__module">
-                                <div class="item_introtext">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
-                                    <a class="btn btn-info readmore" href="{% url 'products' %}"><span>conheça a linha de refresco em pó</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="push"></div>
-
-{% endblock content %}
+    <!-- end:content -->
+{% endblock %}

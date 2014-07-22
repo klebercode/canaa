@@ -4,347 +4,147 @@
 
 {% block content %}
 
-<div id="content-row">
-      <div class="row-container">
-        <div class="container">
-          <div class="content-inner row">
-            <div id="component" class="span12">
-              <div id="system-message-container">
-                <div id="system-message"></div>
-              </div>
-              <div class="note"></div>
-              <div class="page-gallery page-gallery__gallery">
-                <div class="page_header">
-                  <h3><span class="item_title_part0">Nossos</span> <span class="item_title_part1">Produtos</span> </h3>
+    <div class="k-content products">
+        <div class="row-fluid">
+            <span class="span8">
+                <h3>Nossa Linha de Produtos</h3>
+            </span>
+            <div class="span4">
+                <div class="search-form">
+                    <form role="form" action="#" method="get">
+                        <div class="input-append">
+                          <input class="span10" id="search" type="text" name="search" placeholder="Buscar">
+                          <button class="btn btn-info" type="submit"><i class="icon-search visible-phone"></i><span class="hidden-phone"><i class="icon-search"></i></span></button>
+                        </div>
+                    </form>
                 </div>
-                <!-- Filter -->
-                <div class="filters">
-                  <b>Escolha uma categoria:</b>
-
-                  <ul id="filters" class="unstyled">
-                    <li class="firstItem"><a href="#" data-filter="*" class="selected">Todas</a></li>
-                      <li><a class="" href="#" data-filter=".PF_100g">Polpa de Fruta 100g</a></li>
-                      <li><a class="" href="#" data-filter=".PF_400g">Polpa de Fruta 400g</a></li>
-                      <li><a class="" href="#" data-filter=".PF_1kg">Polpa de Fruta 1kg/100g</a></li>
-                      <li><a class="" href="#" data-filter=".PF_5kg">Polpa de Fruta (Linha Industrial 5kg)</a></li>
-                      <li class="lastItem"><a class="" href="#" data-filter=".RP">Refresco em Pó</a></li>
-                  </ul>
-
-                  <div class="clearfix"></div>
-                </div>
-
-                <div class="row-fluid">
-                  <ul id="isotopeContainer" class="gallery items-row cols-3 hover_true isotope">
-                    <li class="gallery-item style2 PF_100g firstItem isotope-item">
-                      <!-- Icons -->
-                      <div class="view">
-                        <!-- Image  -->
-                        <div class="item_img img-intro img-intro__left">
-                          <img src="{{ STATIC_URL }}images/products/polpa_canaa_manga_thumb.jpg" alt="">
-                        </div>
-                        <div class="mask"></div>
-                        <div class="content">
-                          <div class="mask_wrap"><div class="mask_cont">
-                            <!--  title/author -->
-                            <div class="item_header">
-                              <h4 class="item_title">
-                                <a href="#"> <span class="item_title_part0">Polpa</span> <span class="item_title_part1">de</span> <span class="item_title_part2">Manga</span> </a>
-                              </h4>
-                            </div>
-                            <!-- info TOP -->
-                            <!-- Introtext -->
-                            <div class="item_introtext">
-                              <!--
-                              <p></p>
-                              -->
-                            </div>
-                            <!-- info BOTTOM -->
-                            <div class="item_more">
-                              <a href="{{ STATIC_URL }}images/polpa_canaa_manga.jpg" class="galleryZoom">
-                                <i class="icon-zoom-in"></i>
-                              </a>
-                              <a href="#">
-                                <i class="icon-signin"></i>
-                              </a>
-                            </div>
-                          </div></div>
-                        </div>
-                      </div>
-                      <div class="clearfix"></div>
-                    </li><!-- end span -->
-                    <li class="gallery-item style2 PF_100g firstItem isotope-item">
-                      <!-- Icons -->
-                      <div class="view">
-                        <!-- Image  -->
-                        <div class="item_img img-intro img-intro__left">
-                          <img src="{{ STATIC_URL }}images/products/polpa_canaa_manga_thumb.jpg" alt="">
-                        </div>
-                        <div class="mask"></div>
-                        <div class="content">
-                          <div class="mask_wrap"><div class="mask_cont">
-                            <!--  title/author -->
-                            <div class="item_header">
-                              <h4 class="item_title">
-                                <a href="#"> <span class="item_title_part0">Polpa</span> <span class="item_title_part1">de</span> <span class="item_title_part2">Manga</span> </a>
-                              </h4>
-                            </div>
-                            <!-- info TOP -->
-                            <!-- Introtext -->
-                            <div class="item_introtext">
-                              <!--
-                              <p></p>
-                              -->
-                            </div>
-                            <!-- info BOTTOM -->
-                            <div class="item_more">
-                              <a href="{{ STATIC_URL }}images/polpa_canaa_manga.jpg" class="galleryZoom">
-                                <i class="icon-zoom-in"></i>
-                              </a>
-                              <a href="#">
-                                <i class="icon-signin"></i>
-                              </a>
-                            </div>
-                          </div></div>
-                        </div>
-                      </div>
-                      <div class="clearfix"></div>
-                    </li><!-- end span -->
-                    <li class="gallery-item style2 PF_100g firstItem isotope-item">
-                      <!-- Icons -->
-                      <div class="view">
-                        <!-- Image  -->
-                        <div class="item_img img-intro img-intro__left">
-                          <img src="{{ STATIC_URL }}images/products/polpa_canaa_manga_thumb.jpg" alt="">
-                        </div>
-                        <div class="mask"></div>
-                        <div class="content">
-                          <div class="mask_wrap"><div class="mask_cont">
-                            <!--  title/author -->
-                            <div class="item_header">
-                              <h4 class="item_title">
-                                <a href="#"> <span class="item_title_part0">Polpa</span> <span class="item_title_part1">de</span> <span class="item_title_part2">Manga</span> </a>
-                              </h4>
-                            </div>
-                            <!-- info TOP -->
-                            <!-- Introtext -->
-                            <div class="item_introtext">
-                              <!--
-                              <p></p>
-                              -->
-                            </div>
-                            <!-- info BOTTOM -->
-                            <div class="item_more">
-                              <a href="{{ STATIC_URL }}images/polpa_canaa_manga.jpg" class="galleryZoom">
-                                <i class="icon-zoom-in"></i>
-                              </a>
-                              <a href="#">
-                                <i class="icon-signin"></i>
-                              </a>
-                            </div>
-                          </div></div>
-                        </div>
-                      </div>
-                      <div class="clearfix"></div>
-                    </li><!-- end span -->
-                    <li class="gallery-item style2 PF_100g firstItem isotope-item">
-                      <!-- Icons -->
-                      <div class="view">
-                        <!-- Image  -->
-                        <div class="item_img img-intro img-intro__left">
-                          <img src="{{ STATIC_URL }}images/products/polpa_canaa_manga_thumb.jpg" alt="">
-                        </div>
-                        <div class="mask"></div>
-                        <div class="content">
-                          <div class="mask_wrap"><div class="mask_cont">
-                            <!--  title/author -->
-                            <div class="item_header">
-                              <h4 class="item_title">
-                                <a href="#"> <span class="item_title_part0">Polpa</span> <span class="item_title_part1">de</span> <span class="item_title_part2">Manga</span> </a>
-                              </h4>
-                            </div>
-                            <!-- info TOP -->
-                            <!-- Introtext -->
-                            <div class="item_introtext">
-                              <!--
-                              <p></p>
-                              -->
-                            </div>
-                            <!-- info BOTTOM -->
-                            <div class="item_more">
-                              <a href="{{ STATIC_URL }}images/polpa_canaa_manga.jpg" class="galleryZoom">
-                                <i class="icon-zoom-in"></i>
-                              </a>
-                              <a href="#">
-                                <i class="icon-signin"></i>
-                              </a>
-                            </div>
-                          </div></div>
-                        </div>
-                      </div>
-                      <div class="clearfix"></div>
-                    </li><!-- end span -->
-                    <li class="gallery-item style2 PF_100g firstItem isotope-item">
-                      <!-- Icons -->
-                      <div class="view">
-                        <!-- Image  -->
-                        <div class="item_img img-intro img-intro__left">
-                          <img src="{{ STATIC_URL }}images/products/polpa_canaa_manga_thumb.jpg" alt="">
-                        </div>
-                        <div class="mask"></div>
-                        <div class="content">
-                          <div class="mask_wrap"><div class="mask_cont">
-                            <!--  title/author -->
-                            <div class="item_header">
-                              <h4 class="item_title">
-                                <a href="#"> <span class="item_title_part0">Polpa</span> <span class="item_title_part1">de</espan> <span class="item_title_part2">Manga</span> </a>
-                              </h4>
-                            </div>
-                            <!-- info TOP -->
-                            <!-- Introtext -->
-                            <div class="item_introtext">
-                              <!--
-                              <p></p>
-                              -->
-                            </div>
-                            <!-- info BOTTOM -->
-                            <div class="item_more">
-                              <a href="{{ STATIC_URL }}images/polpa_canaa_manga.jpg" class="galleryZoom">
-                                <i class="icon-zoom-in"></i>
-                              </a>
-                              <a href="#">
-                                <i class="icon-signin"></i>
-                              </a>
-                            </div>
-                          </div></div>
-                        </div>
-                      </div>
-                      <div class="clearfix"></div>
-                    </li><!-- end span -->
-                  </ul>
-                </div><!-- end row -->
-              </div>
-
-
-              <script type="text/javascript">
-                jQuery(document).ready(function() {
-                (function($){
-                 $(window).load(function(){
-
-                  var $cols = 5;
-                  var $container = $('#isotopeContainer');
-
-                  $item = $('.gallery-item')
-                  $item.outerWidth(Math.floor($container.width() / $cols));
-
-                  $container.isotope({
-                    animationEngine: 'best-available',
-                    animationOptions: {
-                        queue: false,
-                        duration: 800
-                      },
-                      containerClass : 'isotope',
-                      containerStyle: {
-                        position: 'relative',
-                        overflow: 'hidden'
-                      },
-                      hiddenClass : 'isotope-hidden',
-                      itemClass : 'isotope-item',
-                      resizable: true,
-                      resizesContainer : true,
-                      transformsEnabled: !$.browser.opera // disable transforms in Opera
-                  });
-
-                  if($container.width() <= '767'){
-                    $item.outerWidth($container.width());
-                    $item.addClass('straightDown');
-                    $container.isotope({
-                      layoutMode: 'straightDown'
-                    });
-                  } else {
-                    $item.removeClass('straightDown');
-                    $container.isotope({
-                      layoutMode: 'fitRows'
-                    });
-                  }
-
-                  $(window).resize(function(){
-                    $item.outerWidth(Math.floor($container.width() / $cols));
-                    if($container.width() <= '767'){
-                      $item.outerWidth($container.width());
-                      $item.addClass('straightDown');
-                      $container.isotope({
-                        layoutMode: 'straightDown'
-                      });
-                    } else {
-                      $item.outerWidth(Math.floor($container.width() / $cols));
-                      $item.removeClass('straightDown');
-                      $container.isotope({
-                        layoutMode: 'fitRows'
-                      });
-                    }
-                  });
-                });
-              })(jQuery);
-              });
-              </script>
-
-
-              <script type="text/javascript">
-                jQuery(document).ready(function() {
-                (function($){
-                 $(window).load(function(){
-
-                  var $container = $('#isotopeContainer');
-
-                  // filter items when filter link is clicked
-                  $('#filters a').click(function(){
-                    var selector = $(this).attr('data-filter');
-                    $container.isotope({ filter: selector });
-                    return false;
-                  });
-
-                  var $optionSets = $('#filters li'),
-                      $optionLinks = $optionSets.find('a');
-
-                      $optionLinks.click(function(){
-                          var $this = $(this);
-                          // don't proceed if already selected
-                          if ( $this.hasClass('selected') ) {
-                            return false;
-                          }
-                          var $optionSet = $this.parents('#filters');
-                          $optionSet.find('.selected').removeClass('selected');
-                          $this.addClass('selected');
-
-                          // make option object dynamically, i.e. { filter: '.my-filter-class' }
-                          var options = {},
-                              key = $optionSet.attr('data-option-key'),
-                              value = $this.attr('data-option-value');
-                          // parse 'false' as false boolean
-                          value = value === 'false' ? false : value;
-                          options[ key ] = value;
-                          if ( key === 'layoutMode' && typeof changeLayoutMode === 'function' ) {
-                            // changes in layout modes need extra logic
-                            changeLayoutMode( $this, options )
-                          } else {
-                            // otherwise, apply new options
-                            $container.isotope( options );
-                          }
-
-                          return false;
-                      });
-                 });
-              })(jQuery);
-              });
-              </script>
-            <!-- Content-bottom -->
             </div>
-          <!-- Right sidebar -->
-          </div>
         </div>
-      </div>
-    </div>
 
-    <div id="push"></div>
+        <!-- begin:content -->
+        <div class="row-fluid">
+            <!-- begin:elements -->
+            <div class="row-fluid content-home">
+                <!-- begin:blog-article -->
+                <div class="span12 products blog">
+                    <div class="row-fluid">
+                        <ul class="thumbnails">
+                          <!-- begin:loop-article -->
+                          <li class="span4">
+                            <div class="thumbnail">
+                                <div class="thumbnail-body">
+                                    <a href="#" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                                        <img src="{{ STATIC_URL }}img/media/products_group.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="thumbnail-title">
+                                    <h2><a href="#">Polpa 100g</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque.</p>
+                                </div>
+                            </div>
+                          </li>
+                          <!-- break -->
+                          <li class="span4">
+                            <div class="thumbnail">
+                                <div class="thumbnail-body">
+                                    <a href="#" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                                        <img src="{{ STATIC_URL }}img/media/products_group.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="thumbnail-title">
+                                    <h2><a href="#">Polpa 100g</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque.</p>
+                                </div>
+                            </div>
+                          </li>
+                          <!-- break -->
+                          <li class="span4">
+                            <div class="thumbnail">
+                                <div class="thumbnail-body">
+                                    <a href="#" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                                        <img src="{{ STATIC_URL }}img/media/products_group.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="thumbnail-title">
+                                    <h2><a href="#">Polpa 100g</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque.</p>
+                                </div>
+                            </div>
+                          </li>
+                          <!-- break -->
+                          <li class="span4">
+                            <div class="thumbnail">
+                                <div class="thumbnail-body">
+                                    <a href="#" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                                        <img src="{{ STATIC_URL }}img/media/products_group.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="thumbnail-title">
+                                    <h2><a href="#">Polpa 100g</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque.</p>
+                                </div>
+                            </div>
+                          </li>
+                          <!-- break -->
+                          <li class="span4">
+                            <div class="thumbnail">
+                                <div class="thumbnail-body">
+                                    <a href="#" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                                        <img src="{{ STATIC_URL }}img/media/products_group.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="thumbnail-title">
+                                    <h2><a href="#">Polpa 100g</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque.</p>
+                                </div>
+                            </div>
+                          </li>
+                          <!-- break -->
+                          <li class="span4">
+                            <div class="thumbnail">
+                                <div class="thumbnail-body">
+                                    <a href="#" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                                        <img src="{{ STATIC_URL }}img/media/products_group.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="thumbnail-title">
+                                    <h2><a href="#">Polpa 100g</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque.</p>
+                                </div>
+                            </div>
+                          </li>
+                          <!-- end:loop-article -->
+                        </ul>
+
+                    </div>
+
+                    <!--begin:pagination-->
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="pagination pagination-centered">
+                                <ul>
+                                    <li><a href="#">«</a></li>
+                                    <li class="disabled"><a href="#">1</a></li>
+                                    <li class="active"><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">»</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end:pagination-->
+
+                </div>
+                <!-- end:blog-article -->
+
+            </div>
+            <!-- end:elements -->
+
+        </div>
+        <!-- Right sidebar -->
+
+    </div>
 
 {% endblock content %}

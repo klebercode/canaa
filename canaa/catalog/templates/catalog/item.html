@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+
+{% block nav_products %} class="active"{% endblock %}
+
+{% block content %}
+
+    <div class="k-content products">
+        <div class="row-fluid">
+            <span class="span8">
+                <h3>Nossos Produtos {% if search %}<small>busca por "{{ search }}"</small>{% endif %}</h3>
+            </span>
+            <span class="span4">
+                <div class="search-form">
+                    <form role="form" action="#" method="get">
+                        <div class="input-append">
+                          <input class="span10" id="search" type="text" name="search" placeholder="Buscar">
+                          <button class="btn btn-info" type="submit"><i class="icon-search visible-phone"></i><span class="hidden-phone"><i class="icon-search"></i></span></button>
+                        </div>
+                    </form>
+                </div>
+            </span>
+        </div>
+
+        <!-- begin:produtos -->
+        <div class="row-fluid products">
+            <div class="column-posts row-fluid">
+                <div class="span4">
+                    <div class="thumbnail">
+                        <div class="thumbnail-body">
+                            <div class="wrapper-image">
+                                <img src="{{ STATIC_URL }}img/media/polpa_canaa_manga.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="span8 pull-right">
+                    <h4>Polpa 100g - Manga</h4>
+                    <p>Contém vitaminas A,B e C, cálcio e fósforo. Possui Ação protetora na pele e na mucosa, tem papel essencial na função da retina, nos resfriados e nos pacientes com tumores cancerígenos.</p>
+                    <p>
+                        <div class="row-fluid k-tb-produtos" style="padding-top: 12px;">
+                            <ul>
+                                <li class="k-body">Unidade
+                                    <ol>
+                                        <li>Kg</li>
+                                    </ol>
+                                </li>
+                                <li class="k-body">Peso
+                                    <ol>
+                                        <li>100</li>
+                                    </ol>
+                                </li>
+                                <li class="k-body">Caixa
+                                    <ol>
+                                        <li>1</li>
+                                    </ol>
+                                </li>
+                                <li class="k-body">Validade
+                                    <ol>
+                                        <li>X Dias</li>
+                                    </ol>
+                                </li>
+                                <li class="k-body">Conservação
+                                    <ol>
+                                        <li>(+/-) 0º</li>
+                                    </ol>
+                                </li>
+                            </ul>
+                        </div>
+                    </p>
+                </div>
+            </div>
+            <!-- end:produtos -->
+            <div class="column-posts row-fluid">
+                <div class="span4">
+                    <div class="thumbnail">
+                        <div class="thumbnail-body">
+                            <div class="wrapper-image">
+                                <img src="{{ STATIC_URL }}img/media/polpa_canaa_manga.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="span8 pull-right">
+                    <h4>Polpa 100g - Manga</h4>
+                    <p>Contém vitaminas A,B e C, cálcio e fósforo. Possui Ação protetora na pele e na mucosa, tem papel essencial na função da retina, nos resfriados e nos pacientes com tumores cancerígenos </p>
+                    <p>
+                        <div class="row-fluid k-tb-produtos" style="padding-top: 12px;">
+                            <ul>
+                                <li class="k-body">Unidade
+                                    <ol>
+                                        <li>Kg</li>
+                                    </ol>
+                                </li>
+                                <li class="k-body">Peso
+                                    <ol>
+                                        <li>100</li>
+                                    </ol>
+                                </li>
+                                <li class="k-body">Caixa
+                                    <ol>
+                                        <li>1</li>
+                                    </ol>
+                                </li>
+                                <li class="k-body">Validade
+                                    <ol>
+                                        <li>X Dias</li>
+                                    </ol>
+                                </li>
+                                <li class="k-body">Conservação
+                                    <ol>
+                                        <li>(+/-) 0º</li>
+                                    </ol>
+                                </li>
+                            </ul>
+                        </div>
+                    </p>
+                </div>
+            </div>
+            <!-- end:produtos -->
+            <div class="column-posts row-fluid">
+                <div class="span4">
+                    <div class="thumbnail">
+                        <div class="thumbnail-body">
+                            <div class="wrapper-image">
+                                <img src="{{ STATIC_URL }}img/media/polpa_canaa_manga.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="span8 pull-right">
+                    <h4>Polpa 100g - Manga</h4>
+                    <p>Contém vitaminas A,B e C, cálcio e fósforo. Possui Ação protetora na pele e na mucosa, tem papel essencial na função da retina, nos resfriados e nos pacientes com tumores cancerígenos </p>
+                    <p>
+                        <div class="row-fluid k-tb-produtos" style="padding-top: 12px;">
+                            <ul>
+                                <li class="k-body">Unidade
+                                    <ol>
+                                        <li>Kg</li>
+                                    </ol>
+                                </li>
+                                <li class="k-body">Peso
+                                    <ol>
+                                        <li>100</li>
+                                    </ol>
+                                </li>
+                                <li class="k-body">Caixa
+                                    <ol>
+                                        <li>1</li>
+                                    </ol>
+                                </li>
+                                <li class="k-body">Validade
+                                    <ol>
+                                        <li>X Dias</li>
+                                    </ol>
+                                </li>
+                                <li class="k-body">Conservação
+                                    <ol>
+                                        <li>(+/-) 0º</li>
+                                    </ol>
+                                </li>
+                            </ul>
+                        </div>
+                    </p>
+                </div>
+            </div>
+            <!-- end:produtos -->
+
+            <!--begin:pagination-->
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="pagination pagination-centered">
+                        <ul>
+                            <li><a href="#">«</a></li>
+                            <li class="disabled"><a href="#">1</a></li>
+                            <li class="active"><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">»</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--end:pagination-->
+
+        </div>
+        <!-- end:elements -->
+
+    </div>
+
+{% endblock content %}

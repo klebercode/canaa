@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block nav_products %} class="active"{% endblock %}
+
+{% block content %}
+
+    <div class="k-content products">
+        <div class="row-fluid">
+            <span class="span8">
+                <h3>Nossa Linha de Produtos {% if search %}<small>busca por "{{ search }}"</small>{% endif %}</h3>
+            </span>
+            <span class="span4">
+                <div class="search-form">
+                    <form role="form" action="#" method="get">
+                        <div class="input-append">
+                          <input class="span10" id="search" type="text" name="search" placeholder="Buscar">
+                          <button class="btn btn-info" type="submit"><i class="icon-search visible-phone"></i><span class="hidden-phone"><i class="icon-search"></i></span></button>
+                        </div>
+                    </form>
+                </div>
+            </span>
+        </div>
+
+        <!-- begin:content -->
+        <div class="row-fluid">
+            <!-- begin:elements -->
+            <div class="row-fluid content-home">
+                <!-- begin:blog-article -->
+                <div class="span12 products blog">
+                    <div class="row-fluid">
+                        <ul class="thumbnails">
+                          <!-- begin:loop-article -->
+                          <li class="span4">
+                            <div class="thumbnail">
+                                <div class="thumbnail-body">
+                                    <a href="http://localhost:8000/produtos/itens/" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                                        <img src="{{ STATIC_URL }}img/media/polpa_1.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="thumbnail-title">
+                                    <h2><a href="http://localhost:8000/produtos/itens/">Polpa 100g</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque.</p>
+                                </div>
+                            </div>
+                          </li>
+                          <!-- break -->
+                          <li class="span4">
+                            <div class="thumbnail">
+                                <div class="thumbnail-body">
+                                    <a href="http://localhost:8000/produtos/itens/" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                                        <img src="{{ STATIC_URL }}img/media/polpa_2.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="thumbnail-title">
+                                    <h2><a href="http://localhost:8000/produtos/itens/">Polpa 100g</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque.</p>
+                                </div>
+                            </div>
+                          </li>
+                          <!-- break -->
+                          <li class="span4">
+                            <div class="thumbnail">
+                                <div class="thumbnail-body">
+                                    <a href="http://localhost:8000/produtos/itens/" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                                        <img src="{{ STATIC_URL }}img/media/polpa_3.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="thumbnail-title">
+                                    <h2><a href="http://localhost:8000/produtos/itens/">Polpa 100g</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque.</p>
+                                </div>
+                            </div>
+                          </li>
+                          <!-- break -->
+                          <li class="span4">
+                            <div class="thumbnail">
+                                <div class="thumbnail-body">
+                                    <a href="http://localhost:8000/produtos/itens/" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                                        <img src="{{ STATIC_URL }}img/media/polpa_1.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="thumbnail-title">
+                                    <h2><a href="http://localhost:8000/produtos/itens/">Polpa 100g</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque.</p>
+                                </div>
+                            </div>
+                          </li>
+                          <!-- break -->
+                          <li class="span4">
+                            <div class="thumbnail">
+                                <div class="thumbnail-body">
+                                    <a href="http://localhost:8000/produtos/itens/" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                                        <img src="{{ STATIC_URL }}img/media/polpa_2.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="thumbnail-title">
+                                    <h2><a href="http://localhost:8000/produtos/itens/">Polpa 100g</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque.</p>
+                                </div>
+                            </div>
+                          </li>
+                          <!-- break -->
+                          <li class="span4">
+                            <div class="thumbnail">
+                                <div class="thumbnail-body">
+                                    <a href="http://localhost:8000/produtos/itens/" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                                        <img src="{{ STATIC_URL }}img/media/polpa_3.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="thumbnail-title">
+                                    <h2><a href="http://localhost:8000/produtos/itens/">Polpa 100g</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque.</p>
+                                </div>
+                            </div>
+                          </li>
+                          <!-- end:loop-article -->
+                        </ul>
+
+                    </div>
+
+                    <!--begin:pagination-->
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="pagination pagination-centered">
+                                <ul>
+                                    <li><a href="#">«</a></li>
+                                    <li class="disabled"><a href="#">1</a></li>
+                                    <li class="active"><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">»</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end:pagination-->
+
+                </div>
+                <!-- end:blog-article -->
+
+            </div>
+            <!-- end:elements -->
+
+        </div>
+        <!-- Right sidebar -->
+
+    </div>
+
+{% endblock content %}
