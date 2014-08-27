@@ -7,7 +7,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', 'canaa.core.views.home', name='home'),
-    url(r'^institucional/', 'canaa.core.views.institutional', name='institutional'),
+    url(r'^institucional/', 'canaa.core.views.institutional',
+        name='institutional'),
     # url(r'^produtos/', 'canaa.core.views.products', name='products'),
     url(r'^representantes/', 'canaa.core.views.sellers', name='sellers'),
     url(r'^marketing/', 'canaa.core.views.marketing', name='marketing'),

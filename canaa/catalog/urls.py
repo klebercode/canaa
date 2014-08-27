@@ -1,8 +1,6 @@
 # coding: utf-8
 from django.conf.urls import patterns, url
 
-from canaa.catalog.views import group, item, detail
-
 
 urlpatterns = patterns('canaa.catalog.views',
     url(r'^$', 'group', name='group'),

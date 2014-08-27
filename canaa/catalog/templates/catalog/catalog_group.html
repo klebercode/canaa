@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block nav_products %} class="active"{% endblock %}
+
+{% block content %}
+
+    <div class="k-content products">
+        <div class="row-fluid">
+            <span class="span8">
+                <h3>Nossa Linha de Produtos {% if search %}<small>busca por "{{ search }}"</small>{% endif %}</h3>
+            </span>
+            <span class="span4">
+                <div class="search-form">
+                    <form role="form" action="#" method="get">
+                        <div class="input-append">
+                          <input class="span10" id="search" type="text" name="search" placeholder="Buscar">
+                          <button class="btn btn-info" type="submit"><i class="icon-search visible-phone"></i><span class="hidden-phone"><i class="icon-search"></i></span></button>
+                        </div>
+                    </form>
+                </div>
+            </span>
+        </div>
+
+        <!-- begin:content -->
+        <div class="row-fluid">
+            <!-- begin:blog-article -->
+            <div class="span12 products blog">
+                <div class="row-fluid">
+                    <ul class="thumbnails">
+                      <!-- begin:loop-article -->
+                      {% for group in groups %}
+                      <li class="span4">
+                        <div class="thumbnail">
+                            <div class="thumbnail-body">
+                                <a href="{{ group.get_absolute_url }}" title="{{ group.name }}">
+                                    <img src="{{ group.image.url }}" alt="{{ group.name }}">
+                                </a>
+                            </div>
+                            <div class="thumbnail-title">
+                                <h2><a href="/produtos/itens/">{{ group.name }}</a></h2>
+                                <p>{{ group.description }}</p>
+                            </div>
+                        </div>
+                      </li>
+                      <!-- break -->
+                      {% empty %}
+                      <p>Nenhum grupo de produtos encontrado.</p>
+                      {% endfor %}
+                      <!-- end:loop-article -->
+                    </ul>
+
+                </div>
+
+                <!--begin:pagination-->
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="pagination pagination-centered">
+                            <ul>
+                                {% if groups.has_previous %}
+                                    <li><a href="?page={{ groups.previous_page_number }}">&laquo;</a></li>
+                                {% endif %}
+
+                                <li><a href="{{ groups.number.url }}">Página {{ groups.number }} de {{ groups.paginator.num_pages }}</a></li>
+
+                                {% if groups.has_next %}
+                                    <li><a href="?page={{ groups.next_page_number }}">&raquo;</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--end:pagination-->
+
+            </div>
+            <!-- end:blog-article -->
+
+
+        </div>
+        <!-- Right sidebar -->
+
+    </div>
+
+{% endblock content %}

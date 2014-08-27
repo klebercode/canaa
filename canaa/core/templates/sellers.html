@@ -8,15 +8,15 @@
         <div class="row-fluid">
             <h3>Representantes</h3>
             <img class="k-top marg20-btm" src="{{ STATIC_URL }}img/vendas_canaa.jpg">
-            <p>Breve texto sobre a entrega de protudos e alcance territorial...</p>
+            <p>{{ sale.content }}</p>
         </div>
 
         <!-- Search -->
         <div class="row-fluid marg30-top">
-            <span class="span8">
+            <span class="span7">
                 <h4>Representantes e Distribuidores {% if search %}<small>busca por "{{ search }}"</small>{% endif %}</h4>
             </span>
-            <span class="span4">
+            <span class="span5">
                 <div class="search-form">
                     <form role="form" action="#" method="get">
                         <div class="input-append">
@@ -39,45 +39,32 @@
                         <th>Tipo</th>
                         <th>UF</th>
                     </tr>
+                    {% for seller in sellers %}
+                    <tr class="{% if forloop.counter|divisibleby:2 %}even{% endif %}">
+                        <td>{{ seller.name }}</td>
+                        <td>{{ seller.phone }}</td>
+                        <td>{{ seller.email }}</td>
+                        <td>{{ seller.get_type_display }}</td>
+                        <td>{{ seller.state }}</td>
+                    </tr>
+                    {% empty %}
                     <tr>
-                        <td>Kleber Soares</td>
-                        <td>(00) 0000-0000</td>
-                        <td>kleber@jookle.com.br</td>
-                        <td>Distribuidor</td>
-                        <td>PE</td>
+                        <td colspan="5" align="center"><br>Nenhum Representante/Distribuidor encontrado.<br><br></td>
                     </tr>
-                    <tr class='even'>
-                        <td>Kleber Soares</td>
-                        <td>(00) 0000-0000</td>
-                        <td>kleber@jookle.com.br</td>
-                        <td>Representante</td>
-                        <td>SP</td>
-                    </tr>
-                    <tr>
-                        <td>Kleber Soares</td>
-                        <td>(00) 0000-0000</td>
-                        <td>kleber@jookle.com.br</td>
-                        <td>Representante</td>
-                        <td>RN</td>
-                    </tr>
-                    <tr class='even'>
-                        <td>Kleber Soares</td>
-                        <td>(00) 0000-0000</td>
-                        <td>kleber@jookle.com.br</td>
-                        <td>Distribuidor</td>
-                        <td>DF</td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
             <div class="pagination pagination-centered">
                 <ul>
-                    <li><a href="#">«</a></li>
-                    <li class="disabled"><a href="#">1</a></li>
-                    <li class="active"><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">»</a></li>
+                    {% if sellers.has_previous %}
+                        <li><a href="?page={{ sellers.previous_page_number }}">&laquo;</a></li>
+                    {% endif %}
+
+                    <li><a href="{{ sellers.number.url }}">Página {{ sellers.number }} de {{ sellers.paginator.num_pages }}</a></li>
+
+                    {% if sellers.has_next %}
+                        <li><a href="?page={{ sellers.next_page_number }}">&raquo;</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

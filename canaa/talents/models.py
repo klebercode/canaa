@@ -10,7 +10,6 @@ SEX_CHOICES = (
     ('Masculino', u'Masculino'),
 )
 
-
 FORMATION_CHOICES = (
     ('EF', u'Ensino Fundamental'),
     ('EM', u'Ensino Médio'),

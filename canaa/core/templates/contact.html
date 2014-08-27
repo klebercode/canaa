@@ -18,22 +18,28 @@
                         <h3>Endereço</h3>
                         <i class="icons-marker icon-home"></i>
                         <div class="contact-address">
-                            138 Atlantis Ln<br>
-                            Kingsport<br>
-                            Illinois 121164<br>
+                            {{ enterprise.address }}, {{ enterprise.number }}<br>
+                            {{ enterprise.complement }}, {{ enterprise.district }}<br>
+                            {{ enterprise.city }}/{{ enterprise.state }}<br>
                         </div>
                     </div>
                     <div class="span4">
                         <h3>Fone</h3>
                         <i class="icons-marker icon-phone"></i>
-                        <div>+1 800 559 6580</div>
+                        <div>{{ enterprise.phone1 }}</div>
+                        {% if enterprise.phone2 %}
+                        <i class="icons-marker icon-phone"></i>
+                        <div>{{ enterprise.phone2 }}</div>
+                        {% endif %}
+                        {% if enterprise.phone3 %}
                         <i class="icons-marker icon-print"></i>
-                        <div>+1 504 889 9898</div>
+                        <div>{{ enterprise.phone3 }}</div>
+                        {% endif %}
                     </div>
                     <div class="span4">
                         <h3>E-mail</h3>
                         <i class="icons-marker icon-envelope"></i>
-                        <div><span>mail@demolink.org</span></div>
+                        <div><span>{{ enterprise.email }}</span></div>
                     </div>
                 </div>
             </div>
@@ -41,21 +47,30 @@
                 <!-- Message -->
                 <h3>Envie uma mensagem</h3>
                 <!-- Form -->
-                <form role="form">
-                    <div class="controls span6">
-                        <label for="id_name">Nome</label>
-                        <input type="text" class="span12" id="id_name" placeholder="Nome">
-                    </div>
-                    <div class="controls span6 pull-right">
-                        <label for="id_email">Email</label>
-                        <input type="email" class="span12" id="id_email" placeholder="Email">
-                    </div>
-                    <div class="controls">
-                        <label for="id_message">Mensagem</label>
-                        <textarea class="span12" id="id_message" name="message" placeholder="Mensagem" rows="6"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-info">Enviar Mensagem</button>
-                </form>
+                {% if contact_success %}
+                    <p>Mensagem enviada com sucesso.</p>
+                    <a href="{% url 'contact' %}" class="btn btn-red">Voltar</a>
+                {% else %}
+                    <form method="post" action="." role="form">
+                        {% for field in contact_form %}
+                            {% if field.name = 'name' %}
+                                <div class="controls span6">
+                            {% elif field.name = 'email' %}
+                                <div class="controls span6 pull-right">
+                            {% else %}
+                                <div class="controls">
+                            {% endif %}
+                                {{ field.label }}
+                                {{ field }}
+                                {{ field.errors }}
+                            </div>
+                        {% endfor %}
+                        <div class="controls">
+                        {% csrf_token %}
+                        </div>
+                        <button type="submit" class="btn btn-info">Enviar Mensagem</button>
+                    </form>
+                {% endif %}
             </div>
         </div>
     </div>

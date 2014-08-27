@@ -1,4 +1,6 @@
+{% load i18n %}
 {% load staticfiles %}
+{% load bootstrap3 %}
 <!DOCTYPE html>
 <html lang="pt-br" class="no-js">
   <head>
@@ -41,7 +43,7 @@
     {% endblock css %}
   </head>
 
-  <body>
+  <body style="background: url('{% block nav_body %}{% endblock %}') repeat-x scroll 50% 0px #ffcc7d;">
 
     <div style="background-color: #fff; width: 100%; position: fixed; z-index: 999">
         <div class="container pull">
