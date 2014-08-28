@@ -3,8 +3,10 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
 
-from canaa.context_processors import enterprise_proc
+from canaa.context_processors import enterprise_proc, back_proc
+
 from canaa.talents.forms import TalentForm
+
 from canaa.talents.models import Talent
 
 
@@ -22,7 +24,8 @@ def new(request):
 
     return render(request, 'talents/talent.html', context,
                   context_instance=RequestContext(request,
-                                                  processors=[enterprise_proc]
+                                                  processors=[enterprise_proc,
+                                                              back_proc]
                                                   ))
 
 
@@ -35,9 +38,10 @@ def create(request):
     if not form.is_valid():
         return render(request, 'talents/talent.html', context,
                       context_instance=RequestContext(request,
-                                                      processors=[enterprise_proc]
+                                                      processors=[
+                                                          enterprise_proc,
+                                                          back_proc]
                                                       ))
-
     obj = form.save()
     return HttpResponseRedirect('/trabalhe-conosco/%d/' % obj.pk)
 
@@ -50,5 +54,6 @@ def detail(request, pk):
 
     return render(request, 'talents/talent_detail.html', context,
                   context_instance=RequestContext(request,
-                                                  processors=[enterprise_proc]
+                                                  processors=[enterprise_proc,
+                                                              back_proc]
                                                   ))

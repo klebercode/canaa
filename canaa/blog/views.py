@@ -4,7 +4,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 from django.template import RequestContext
 
-from canaa.context_processors import enterprise_proc
+from canaa.context_processors import enterprise_proc, back_proc
 from canaa.blog.models import Blog, Post
 
 
@@ -37,7 +37,8 @@ def blog(request):
 
     return render(request, 'blog/blog_index.html', context,
                   context_instance=RequestContext(request,
-                                                  processors=[enterprise_proc]
+                                                  processors=[enterprise_proc,
+                                                              back_proc]
                                                   ))
 
 
@@ -49,5 +50,6 @@ def post(request, slug):
 
     return render(request, 'blog/blog_post.html', context,
                   context_instance=RequestContext(request,
-                                                  processors=[enterprise_proc]
+                                                  processors=[enterprise_proc,
+                                                              back_proc]
                                                   ))

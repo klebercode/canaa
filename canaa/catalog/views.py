@@ -1,10 +1,10 @@
 # coding: utf-8
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 from django.template import RequestContext
 
-from canaa.context_processors import enterprise_proc
+from canaa.context_processors import enterprise_proc, back_proc
 from canaa.catalog.models import ProductGroup, Product, ProductInfo
 
 
@@ -32,7 +32,8 @@ def group(request):
 
     return render(request, 'catalog/catalog_group.html', context,
                   context_instance=RequestContext(request,
-                                                  processors=[enterprise_proc]
+                                                  processors=[enterprise_proc,
+                                                              back_proc]
                                                   ))
 
 
@@ -64,7 +65,8 @@ def item(request, group):
 
     return render(request, 'catalog/catalog_item.html', context,
                   context_instance=RequestContext(request,
-                                                  processors=[enterprise_proc]
+                                                  processors=[enterprise_proc,
+                                                              back_proc]
                                                   ))
 
 
@@ -73,5 +75,6 @@ def detail(request, group, item):
 
     return render(request, 'catalog/catalog_detail.html', context,
                   context_instance=RequestContext(request,
-                                                  processors=[enterprise_proc]
+                                                  processors=[enterprise_proc,
+                                                              back_proc]
                                                   ))

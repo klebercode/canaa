@@ -4,7 +4,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 from django.template import RequestContext
 
-from canaa.context_processors import enterprise_proc
+from canaa.context_processors import enterprise_proc, back_proc
 
 from canaa.blog.models import Post
 from canaa.catalog.models import Product
@@ -17,23 +17,30 @@ from canaa.core.forms import ContactForm
 def home(request):
     context = {}
 
-    # banner principal
-    bannerone = Banner.objects.filter(visible=True, type=1).order_by('?')[0]
     # banner secundario
-    bannertwo = Banner.objects.filter(visible=True, type=2).order_by('?')[0]
+    banner = Banner.objects.filter(visible=True, type=2).order_by('?')[0]
     # produtos
     products = Product.objects.filter(visible=True).order_by('?')[0:4]
     # blog
     posts = Post.objects.filter().order_by('?')[0:2]
 
-    context['bannerone'] = bannerone
-    context['bannertwo'] = bannertwo
+    context['bannertwo'] = banner
     context['products'] = products
     context['posts'] = posts
 
     return render(request, 'home.html', context,
                   context_instance=RequestContext(request,
-                                                  processors=[enterprise_proc]
+                                                  processors=[enterprise_proc,
+                                                              back_proc]
+                                                  ))
+
+
+def marketing(request):
+    context = {}
+    return render(request, 'home.html', context,
+                  context_instance=RequestContext(request,
+                                                  processors=[enterprise_proc,
+                                                              back_proc]
                                                   ))
 
 
@@ -49,14 +56,9 @@ def institutional(request):
 
     return render(request, 'institutional.html', context,
                   context_instance=RequestContext(request,
-                                                  processors=[enterprise_proc]
+                                                  processors=[enterprise_proc,
+                                                              back_proc]
                                                   ))
-
-
-def products(request):
-    context = {}
-
-    return render(request, 'products.html', context)
 
 
 def sellers(request):
@@ -87,22 +89,8 @@ def sellers(request):
 
     return render(request, 'sellers.html', context,
                   context_instance=RequestContext(request,
-                                                  processors=[enterprise_proc]
-                                                  ))
-
-
-def marketing(request):
-    context = {}
-
-    return render(request, 'marketing.html', context)
-
-
-def talents(request):
-    context = {}
-
-    return render(request, 'talents.html', context,
-                  context_instance=RequestContext(request,
-                                                  processors=[enterprise_proc]
+                                                  processors=[enterprise_proc,
+                                                              back_proc]
                                                   ))
 
 
@@ -122,5 +110,6 @@ def contact(request):
 
     return render(request, 'contact.html', context,
                   context_instance=RequestContext(request,
-                                                  processors=[enterprise_proc]
+                                                  processors=[enterprise_proc,
+                                                              back_proc]
                                                   ))
