@@ -26,7 +26,7 @@
                 </a>
             </div>
             <div class="k-item_content k-item_num{{ forloop.counter }}">
-                <h4><a href="/produtos/itens/">{{ p.name }}</a></h4>
+                <h4><a href="{{ p.get_absolute_url }}">{{ p.name }}</a></h4>
                 <div class="k-item_introtext">
                     <p>{{ p.description|truncatewords_html:18 }}</p>
                 </div>
@@ -46,13 +46,13 @@
         <div class="span3 k-item">
             <div class="k-item_img">
                 <a href="{{ b.get_absolute_url }}">
-                    <img src="{{ b.image.url }}" alt="{{ b.title }}" width="209" height="142">
+                    <img src="{{ b.image.url }}" alt="{{ b.title }}">
                 </a>
             </div>
             <div class="k-item_content">
                     <h3>{{ b.title }}</h3>
                 <div class="k-item_introtext">
-                    <p>{{ b.body|truncatewords_html:20 }}</p>
+                    <p>{{ b.body|slice:":80" }}</p>
                 </div>
                 <a class="btn btn-red btn-small" href="{{ b.get_absolute_url }}">
                     <span>veja mais</span>

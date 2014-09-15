@@ -59,7 +59,7 @@ BANNER_CHOICES = (
 class Customer(models.Model):
     name = models.CharField(_(u'Nome'), max_length=50)
     image = models.ImageField(_(u'Logo'), upload_to='customer')
-    visible = models.BooleanField(_(u'Visível no site?'))
+    visible = models.BooleanField(_(u'Visível no site?'), default=True)
 
     def admin_image(self):
         return '<img src="%s" width="150" />' % self.image.url
@@ -127,7 +127,7 @@ class Banner(models.Model):
     link = models.CharField(_(u'Link do botão'), max_length=200,
                             help_text='Ex: intitucional ou \
                             mais-saude/acerola-magica')
-    visible = models.BooleanField(_(u'Visível no site?'))
+    visible = models.BooleanField(_(u'Visível no site?'), default=True)
 
     def back_image(self):
         if self.image:
