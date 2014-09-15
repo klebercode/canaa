@@ -28,7 +28,7 @@
             <div class="k-item_content k-item_num{{ forloop.counter }}">
                 <h4><a href="{{ p.get_absolute_url }}?search={{ p.name }}">{{ p.name }}</a></h4>
                 <div class="k-item_introtext">
-                    <p>{{ p.description|slice:":70" }} ...</p>
+                    <p>{{ p.description|slice:":65" }} ...</p>
                 </div>
                 <a class="btn btn-k-item_num{{ forloop.counter }} btn-small" href="{{ p.get_absolute_url }}?search={{ p.name }}">
                     <span>veja mais</span>
