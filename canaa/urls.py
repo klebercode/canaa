@@ -5,7 +5,8 @@ from django.conf.urls.static import static
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     url(r'^$', 'canaa.core.views.home', name='home'),
     url(r'^institucional/', 'canaa.core.views.institutional',
         name='institutional'),
@@ -18,5 +19,6 @@ urlpatterns = patterns('',
     url(r'^mais-saude/', include('canaa.blog.urls', namespace='blog')),
     url(r'^produtos/', include('canaa.catalog.urls', namespace='group')),
 
+    url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

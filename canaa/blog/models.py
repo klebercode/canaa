@@ -5,10 +5,11 @@ from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext_lazy as _
 
-# from sorl.thumbnail import get_thumbnail
-from PIL import Image as Img, ImageOps
-import StringIO
-from django.core.files.uploadedfile import InMemoryUploadedFile
+try:
+    from PIL import Image, ImageOps
+except ImportError:
+    import Image
+    import ImageOps
 
 from tinymce import models as tinymce_models
 
@@ -46,27 +47,16 @@ class Post(models.Model):
     admin_image.short_description = 'Imagem'
 
     def save(self, *args, **kwargs):
-        # if self.image:
-        #     self.image = get_thumbnail(self.image, '500x600', quality=99,
-        #                                format='JPEG')
+        if not self.id and not self.image:
+            return
 
-        if self.image:
-            """ resize image """
-            image = Img.open(StringIO.StringIO(self.image.read()))
-            # .thumbnail = redimensiona proporcionalmente
-            image.thumbnail((898, 611), Img.ANTIALIAS)
-            # .resize = estica para o tamanho definido
-            # image.resize((898, 611), Img.ANTIALIAS)
-            # ImageOps.fit = corta a imagem sem esticar
-            # ImageOps.fit(image, (898, 611), Img.ANTIALIAS)
-            output = StringIO.StringIO()
-            image.save(output, format='JPEG', quality=75)
-            output.seek(0)
-            self.image = InMemoryUploadedFile(output, 'ImageField', "%s"
-                                              % self.image.name, 'image/jpeg',
-                                              output.len, None)
         self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
+
+        image = Image.open(self.image)
+        size = (898, 611)
+        image = ImageOps.fit(image, size, Image.ANTIALIAS)
+        image.save(self.image.path, 'JPEG', quality=99)
 
     def get_absolute_url(self):
         return reverse('blog:post', kwargs={"slug": self.slug})
