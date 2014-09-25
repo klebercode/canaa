@@ -7,7 +7,10 @@
     <div class="k-content">
         <div class="row-fluid">
             <h3>Trabalhe Conosco</h3>
-            <img class="k-top" src="{{ STATIC_URL }}img/trabalhe_conosco_canaa.jpg">
+            {% for p in page %}
+            <img class="k-top marg20-btm" src="{{ p.image.url }}">
+            <p>{{ p.content }}</p>
+            {% endfor %}
         </div>
         <!-- Curriculo -->
         <div class="row-fluid marg30-top">

@@ -21,6 +21,23 @@ FORMATION_CHOICES = (
 )
 
 
+class Page(models.Model):
+    content = models.TextField(_(u'Descrição'))
+    image = models.ImageField(_(u'Banner'), upload_to='talent')
+
+    def admin_image(self):
+        return '<img src="%s" width="300" />' % self.image.url
+    admin_image.allow_tags = True
+    admin_image.short_description = u'Banner'
+
+    def __unicode__(self):
+        return unicode(self.content)
+
+    class Meta:
+        verbose_name = _(u'Início')
+        verbose_name_plural = _(u'Início')
+
+
 class Talent(models.Model):
     name = models.CharField(_(u'Nome'), max_length=150)
     address = models.CharField(_(u'Endereço'), max_length=200)

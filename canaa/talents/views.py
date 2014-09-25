@@ -7,10 +7,13 @@ from canaa.context_processors import enterprise_proc, back_proc
 
 from canaa.talents.forms import TalentForm
 
-from canaa.talents.models import Talent
+from canaa.talents.models import Talent, Page
 
 
 def talent(request):
+    context = {}
+    context['talent'] = Page.objects.all()[:1]
+
     if request.method == 'POST':
         return create(request)
     else:
@@ -21,6 +24,7 @@ def new(request):
     context = {
         'form': TalentForm(),
     }
+    context['page'] = Page.objects.all()[:1]
 
     return render(request, 'talents/talent.html', context,
                   context_instance=RequestContext(request,
@@ -34,6 +38,7 @@ def create(request):
     context = {
         'form': form,
     }
+    context['page'] = Page.objects.all()[:1]
 
     if not form.is_valid():
         return render(request, 'talents/talent.html', context,
@@ -51,6 +56,7 @@ def detail(request, pk):
     context = {
         'talent': talent,
     }
+    context['page'] = Page.objects.all()[:1]
 
     return render(request, 'talents/talent_detail.html', context,
                   context_instance=RequestContext(request,
