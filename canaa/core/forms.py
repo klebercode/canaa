@@ -2,8 +2,20 @@
 from django import forms
 from django.template.loader import render_to_string
 from django.core.mail import EmailMultiAlternatives
+from django.utils.translation import ugettext_lazy as _
 
 from canaa.core.models import Step, Banner
+
+
+SUBJECT_CHOICES = (
+    (_(u'--- Escolha um assunto ---'), _(u'--- Escolha um assunto ---')),
+    (_(u'Dúvida'), _(u'Dúvida')),
+    (_(u'Elogio'), _(u'Elogio')),
+    (_(u'SAC'), _(u'SAC')),
+    (_(u'Informação'), _(u'Informação')),
+    (_(u'Reclamação'), _(u'Reclamação')),
+    (_(u'Venda'), _(u'Venda')),
+)
 
 
 class ContactForm(forms.Form):
@@ -13,6 +25,9 @@ class ContactForm(forms.Form):
     email = forms.EmailField(label=u'E-mail',
                              widget=forms.EmailInput(attrs={'class':
                                                      'span12'}))
+    subject = forms.ChoiceField(label=u'Assunto', choices=SUBJECT_CHOICES,
+                                widget=forms.Select(attrs={'class':
+                                                    'span12'}))
     message = forms.CharField(label=u'Mensagem',
                               widget=forms.Textarea(attrs={'class':
                                                     'span12',

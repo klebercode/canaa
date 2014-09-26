@@ -1,4 +1,5 @@
 Nome: {{ name }}
 E-mail: {{ email }}
-Menssagem: 
+Assunto: {{ subject }}
+Menssagem:
 {{ message }}

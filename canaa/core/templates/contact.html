@@ -54,13 +54,7 @@
                 {% else %}
                     <form method="post" action="." role="form">
                         {% for field in contact_form %}
-                            {% if field.name = 'name' %}
-                                <div class="controls span6">
-                            {% elif field.name = 'email' %}
-                                <div class="controls span6 pull-right">
-                            {% else %}
-                                <div class="controls">
-                            {% endif %}
+                            <div class="controls">
                                 {{ field.label }}
                                 {{ field }}
                                 {{ field.errors }}
