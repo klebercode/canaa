@@ -214,7 +214,7 @@ class Sale(models.Model):
         (width, height) = image.size
         (width, height) = scale_dimensions(width, height, longest_side=902)
 
-        size = (width, height)
+        size = (902, 355)
         """ redimensiona esticando """
         # image = image.resize(size, Image.ANTIALIAS)
         """ redimensiona proporcionalmente """
