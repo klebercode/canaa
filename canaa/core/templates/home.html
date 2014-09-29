@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load thumbnail %}
+
 {% block content %}
     <!-- begin:home-slider -->
     <div class="row-fluid">
@@ -22,7 +24,11 @@
         <div class="span3 k-item k-item_num{{ forloop.counter }}">
             <div class="k-item_img">
                 <a href="{{ p.get_absolute_url }}?search={{ p.name }}">
-                    <img src="{{ p.image.url }}" alt="{{ p.name }}" style="width: 140px;">
+                    {% thumbnail p.image "140x140" crop="center" format="PNG" as im %}
+                        <img src="{{ im.url }}" alt="{{ p.name }}" class="img-responsive">
+                    {% empty %}
+                        <p>Sem Imagem</p>
+                    {% endthumbnail %}
                 </a>
             </div>
             <div class="k-item_content k-item_num{{ forloop.counter }}">
@@ -46,7 +52,11 @@
         <div class="span3 k-item">
             <div class="k-item_img">
                 <a href="{{ b.get_absolute_url }}">
-                    <img src="{{ b.image.url }}" alt="{{ b.title }}">
+                    {% thumbnail b.image "209x142" crop="center" format="PNG" as im %}
+                        <img src="{{ im.url }}" alt="{{ b.title }}" class="img-responsive">
+                    {% empty %}
+                        <p>Sem Imagem</p>
+                    {% endthumbnail %}
                 </a>
             </div>
             <div class="k-item_content">

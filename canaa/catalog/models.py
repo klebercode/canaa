@@ -4,6 +4,13 @@ from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.template.defaultfilters import slugify
 
+from sorl.thumbnail import ImageField
+
+try:
+    from PIL import Image
+except ImportError:
+    import Image
+
 
 PRODUCTINFO_CHOICES = (
     (1, _(u'Valor Energético')),
@@ -32,8 +39,8 @@ class ProductGroup(models.Model):
     slug = models.SlugField(_(u'Nome Slug'), max_length=50,
                             unique=True, editable=False)
     description = models.CharField(_(u'Descrição'), max_length=125)
-    image = models.ImageField(_(u'Imagem'), upload_to='product_group',
-                              help_text='Tamanho: 285x214 px (Ideal)')
+    image = ImageField(_(u'Imagem'), upload_to='product_group',
+                       help_text='Tamanho: 285x214 px (Ideal)')
     visible = models.BooleanField(_(u'Visível no site?'), default=True)
 
     def admin_image(self):
@@ -42,8 +49,35 @@ class ProductGroup(models.Model):
     admin_image.short_description = 'Imagem'
 
     def save(self, *args, **kwargs):
+        if not self.id and not self.image:
+            return
+
         self.slug = slugify(self.name)
         super(ProductGroup, self).save(*args, **kwargs)
+
+        image = Image.open(self.image)
+
+        def scale_dimensions(width, height, longest_side):
+            if width > height:
+                if width > longest_side:
+                    ratio = longest_side*1./width
+                    return (int(width*ratio), int(height*ratio))
+                elif height > longest_side:
+                    ratio = longest_side*1./height
+                    return (int(width*ratio), int(height*ratio))
+            return (width, height)
+
+        (width, height) = image.size
+        (width, height) = scale_dimensions(width, height, longest_side=285)
+
+        size = (width, height)
+        """ redimensiona esticando """
+        # image = image.resize(size, Image.ANTIALIAS)
+        """ redimensiona proporcionalmente """
+        image.thumbnail(size, Image.ANTIALIAS)
+        """ redimensiona cortando para encaixar no tamanho """
+        # image = ImageOps.fit(image, size, Image.ANTIALIAS)
+        image.save(self.image.path, 'JPEG', quality=99)
 
     def get_absolute_url(self):
         return reverse('group:item', kwargs={"group": self.slug})
@@ -66,8 +100,8 @@ class Product(models.Model):
                             unique=True, editable=False)
     description = models.TextField(_(u'Descrição'), max_length=250,
                                    help_text='Descrição do produto')
-    image = models.ImageField(_(u'Imagem'), upload_to=u'product',
-                              help_text='Tamanho: 279x270 px (Ideal)')
+    image = ImageField(_(u'Imagem'), upload_to=u'product',
+                       help_text='Tamanho: 279x270 px (Ideal)')
     visible = models.BooleanField(_(u'Visível no site?'), default=True)
 
     def admin_image(self):
@@ -76,8 +110,35 @@ class Product(models.Model):
     admin_image.short_description = 'Imagem'
 
     def save(self, *args, **kwargs):
+        if not self.id and not self.image:
+            return
+
         self.slug = '%s-%s' % (self.pk, slugify(self.name))
         super(Product, self).save(*args, **kwargs)
+
+        image = Image.open(self.image)
+
+        def scale_dimensions(width, height, longest_side):
+            if width > height:
+                if width > longest_side:
+                    ratio = longest_side*1./width
+                    return (int(width*ratio), int(height*ratio))
+                elif height > longest_side:
+                    ratio = longest_side*1./height
+                    return (int(width*ratio), int(height*ratio))
+            return (width, height)
+
+        (width, height) = image.size
+        (width, height) = scale_dimensions(width, height, longest_side=285)
+
+        size = (width, height)
+        """ redimensiona esticando """
+        # image = image.resize(size, Image.ANTIALIAS)
+        """ redimensiona proporcionalmente """
+        image.thumbnail(size, Image.ANTIALIAS)
+        """ redimensiona cortando para encaixar no tamanho """
+        # image = ImageOps.fit(image, size, Image.ANTIALIAS)
+        image.save(self.image.path, 'JPEG', quality=99)
 
     def get_absolute_url(self):
         return reverse('group:item',

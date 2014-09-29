@@ -5,13 +5,14 @@ from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext_lazy as _
 
+
+from sorl.thumbnail import ImageField
+from tinymce import models as tinymce_models
+
 try:
-    from PIL import Image, ImageOps
+    from PIL import Image
 except ImportError:
     import Image
-    import ImageOps
-
-from tinymce import models as tinymce_models
 
 from canaa.current_user import get_current_user
 
@@ -35,8 +36,8 @@ class Post(models.Model):
                                    editable=False, default=get_current_user)
     pub_date = models.DateTimeField(_(u'Data'), auto_now_add=True)
     body = tinymce_models.HTMLField(verbose_name=u'Conteúdo')
-    image = models.ImageField(_(u'Imagem'), upload_to=u'blog',
-                              help_text='Tamanho Ideal 898x611 px')
+    image = ImageField(_(u'Imagem'), upload_to=u'blog',
+                       help_text='Tamanho Ideal 898x611 px')
 
     def admin_image(self):
         if self.image:
@@ -54,8 +55,27 @@ class Post(models.Model):
         super(Post, self).save(*args, **kwargs)
 
         image = Image.open(self.image)
-        size = (898, 611)
-        image = ImageOps.fit(image, size, Image.ANTIALIAS)
+
+        def scale_dimensions(width, height, longest_side):
+            if width > height:
+                if width > longest_side:
+                    ratio = longest_side*1./width
+                    return (int(width*ratio), int(height*ratio))
+                elif height > longest_side:
+                    ratio = longest_side*1./height
+                    return (int(width*ratio), int(height*ratio))
+            return (width, height)
+
+        (width, height) = image.size
+        (width, height) = scale_dimensions(width, height, longest_side=900)
+
+        size = (width, height)
+        """ redimensiona esticando """
+        # image = image.resize(size, Image.ANTIALIAS)
+        """ redimensiona proporcionalmente """
+        image.thumbnail(size, Image.ANTIALIAS)
+        """ redimensiona cortando para encaixar no tamanho """
+        # image = ImageOps.fit(image, size, Image.ANTIALIAS)
         image.save(self.image.path, 'JPEG', quality=99)
 
     def get_absolute_url(self):
