@@ -14,7 +14,7 @@
         <!-- Search -->
         <div class="row-fluid marg30-top">
             <span class="span7">
-                <h4>Representantes e Distribuidores {% if search %}<small>busca por "{{ search }}"</small>{% endif %}</h4>
+                <h4>Representantes {% if search %}<small>busca por "{{ search }}"</small>{% endif %}</h4>
             </span>
             <span class="span5">
                 <div class="search-form">
@@ -36,7 +36,7 @@
                         <th>Nome</th>
                         <th>Fone</th>
                         <th>Email</th>
-                        <th>Tipo</th>
+                        <!--th>Tipo</th-->
                         <th>UF</th>
                     </tr>
                     {% for seller in sellers %}
@@ -44,12 +44,12 @@
                         <td>{{ seller.name }}</td>
                         <td>{{ seller.phone }}</td>
                         <td>{{ seller.email }}</td>
-                        <td>{{ seller.get_type_display }}</td>
+                        <!--td>{{ seller.get_type_display }}</td-->
                         <td>{{ seller.state }}</td>
                     </tr>
                     {% empty %}
                     <tr>
-                        <td colspan="5" align="center"><br>Nenhum Representante/Distribuidor encontrado.<br><br></td>
+                        <td colspan="4" align="center"><br>Nenhum Representante/Distribuidor encontrado.<br><br></td>
                     </tr>
                     {% endfor %}
                 </tbody>

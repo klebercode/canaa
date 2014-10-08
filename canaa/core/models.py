@@ -52,7 +52,7 @@ INSTITUTIONAL_CHOICES = (
 )
 
 SELLER_CHOICE = (
-    (1, _(u'Distribuidor')),
+    # (1, _(u'Distribuidor')),
     (2, _(u'Representante')),
 )
 
@@ -232,7 +232,8 @@ class Sale(models.Model):
 
 
 class Seller(models.Model):
-    type = models.IntegerField(_(u'Tipo'), choices=SELLER_CHOICE)
+    type = models.IntegerField(_(u'Tipo'), choices=SELLER_CHOICE,
+                               editable=False)
     name = models.CharField(_(u'Nome'), max_length=150, unique=True)
     slug = models.SlugField(_(u'Nome Slug'), max_length=150,
                             unique=True, editable=False)
@@ -240,9 +241,10 @@ class Seller(models.Model):
                              help_text='(99) 9999-9999')
     email = models.EmailField(_(u'Email'))
     state = models.CharField(_(u'UF'), max_length=2, choices=STATE_CHOICES)
-    visible = models.BooleanField(_(u'Visível no site?'))
+    visible = models.BooleanField(_(u'Visível no site?'), default=True)
 
     def save(self, *args, **kwargs):
+        self.type = 2
         self.slug = slugify(self.name)
         super(Seller, self).save(*args, **kwargs)
 
