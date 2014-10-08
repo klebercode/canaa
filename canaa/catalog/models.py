@@ -40,8 +40,7 @@ class ProductGroup(models.Model):
                             unique=True, editable=False)
     description = models.CharField(_(u'Descrição'), max_length=125)
     image = ImageField(_(u'Imagem'), upload_to='product_group',
-                       help_text='Tamanho: 285x214 px (Ideal) | \
-                       Tipo de Arquivo: JPG')
+                       help_text='Tamanho: 285x214 px (Ideal)')
     visible = models.BooleanField(_(u'Visível no site?'), default=True)
 
     def admin_image(self):
@@ -78,7 +77,7 @@ class ProductGroup(models.Model):
         image.thumbnail(size, Image.ANTIALIAS)
         """ redimensiona cortando para encaixar no tamanho """
         # image = ImageOps.fit(image, size, Image.ANTIALIAS)
-        image.save(self.image.path, 'JPEG', quality=99)
+        image.save(self.image.path, 'PNG', quality=99)
 
     def get_absolute_url(self):
         return reverse('group:item', kwargs={"group": self.slug})
@@ -102,8 +101,7 @@ class Product(models.Model):
     description = models.TextField(_(u'Descrição'), max_length=250,
                                    help_text='Descrição do produto')
     image = ImageField(_(u'Imagem'), upload_to=u'product',
-                       help_text='Tamanho: 279x270 px (Ideal) | \
-                       Tipo de Arquivo: JPG')
+                       help_text='Tamanho: 279x270 px (Ideal)')
     visible = models.BooleanField(_(u'Visível no site?'), default=True)
 
     def admin_image(self):
