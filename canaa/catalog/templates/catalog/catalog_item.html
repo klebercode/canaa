@@ -21,9 +21,9 @@
             </span>
         </div>
 
+        {% for product in products %}
         <div class="row-fluid">
             <!-- begin:produtos -->
-            {% for product in products %}
             <div class="span12 products">
                 <div class="column-posts row-fluid">
                     <div class="span4">
@@ -52,12 +52,6 @@
                                         <td align="center">{{ info.amount }}</td>
                                         <td align="center">{{ info.value }}</td>
                                     </tr>
-                                    {% elif forloop.first %}
-                                    <tr>
-                                        <td colspan="3" align="center">
-                                            Nenhuma informação encontrada.
-                                        </td>
-                                    </tr>
                                     {% endif %}
                                 {% empty %}
                                     <tr>
@@ -81,11 +75,11 @@
                 </div>
                 <!-- break -->
             </div>
-            {% empty %}
-            <p>Nenhum produto encontrado.</p>
-            {% endfor %}
             <!-- end:produtos -->
         </div>
+        {% empty %}
+        <p>Nenhum produto encontrado.</p>
+        {% endfor %}
 
         <!--begin:pagination-->
         <div class="row-fluid">
