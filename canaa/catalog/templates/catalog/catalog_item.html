@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load thumbnail %}
+
 {% block nav_products %} class="active"{% endblock %}
 
 {% block content %}
@@ -30,7 +32,11 @@
                         <div class="thumbnail">
                             <div class="thumbnail-body">
                                 <div class="wrapper-image">
-                                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    {% thumbnail product.image "279x279" crop="center" format="PNG" as im %}
+                                    <img src="{{ im.url }}" alt="{{ product.name }}">
+                                    {% empty %}
+                                    <p>Sem Imagem</p>
+                                    {% endthumbnail %}
                                 </div>
                             </div>
                         </div>
