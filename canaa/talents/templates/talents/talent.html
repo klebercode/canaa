@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
+{% load i18n %}
+
 {% block nav_talent %} class="active"{% endblock %}
 
 {% block content %}
 
     <div class="k-content">
         <div class="row-fluid">
-            <h3>Trabalhe Conosco</h3>
+            <h3>{% trans 'Trabalhe Conosco' %}</h3>
             {% for p in page %}
             <img class="k-top marg20-btm" src="{{ p.image.url }}" width="100%">
             <p>{{ p.content }}</p>
@@ -16,7 +18,7 @@
         <div class="row-fluid marg30-top">
             <div class="contact-details">
                 <div class="span7">
-                    <h3>Envie seu currículo</h3>
+                    <h3>{% trans 'Envie seu currículo' %}</h3>
                     <form enctype="multipart/form-data" method="post" action="." role="form">
                         {% csrf_token %}
                         {% for field in form %}
@@ -26,12 +28,12 @@
                                 {{ field.errors }}
                             </div>
                         {% endfor %}
-                        <button name="enviar" class="btn validate btn-primary" type="submit">Enviar Currículo</button>
+                        <button name="enviar" class="btn validate btn-primary" type="submit">{% trans 'Enviar Currículo' %}</button>
                     </form>
                 </div>
                 <div class="span1"></div>
                 <div class="span4">
-                    <h3>Contato</h3>
+                    <h3>{% trans 'Contato' %}</h3>
                     <i class="icons-marker icon-home"></i>
                     <div class="contact-address">
                         {{ enterprise.address }}, {{ enterprise.number }}<br>

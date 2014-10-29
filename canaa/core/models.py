@@ -76,7 +76,7 @@ class Customer(models.Model):
         return unicode(self.name)
 
     class Meta:
-        verbose_name = _(u'Clinte')
+        verbose_name = _(u'Cliente')
         verbose_name_plural = _(u'Clientes')
         ordering = ['name']
 

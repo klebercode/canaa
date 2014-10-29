@@ -1,0 +1,610 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-10-29 19:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: settings.py:95
+msgid "Português"
+msgstr "Portuguese"
+
+#: settings.py:96
+msgid "Inglês"
+msgstr "English"
+
+#: blog/models.py:21 core/models.py:87
+msgid "Conteúdo"
+msgstr "Content"
+
+#: blog/models.py:27 blog/models.py:28
+msgid "Blog"
+msgstr "Blog"
+
+#: blog/models.py:32 core/models.py:106 core/models.py:124
+msgid "Título"
+msgstr "Title"
+
+#: blog/models.py:33
+msgid "Título Slug"
+msgstr "Slug Title"
+
+#: blog/models.py:37
+msgid "Data"
+msgstr "Date"
+
+#: blog/models.py:39 catalog/models.py:42 catalog/models.py:103
+#: core/models.py:89 core/models.py:121
+msgid "Imagem"
+msgstr "Image"
+
+#: blog/models.py:88
+msgid "Post"
+msgstr "Post"
+
+#: blog/models.py:89
+msgid "Posts"
+msgstr "Posts"
+
+#: blog/templates/blog/blog_index.html:12
+#: blog/templates/blog/blog_post.html:11 core/templates/base.html:95
+msgid "+Saúde"
+msgstr "+Health"
+
+#: blog/templates/blog/blog_index.html:12
+#: catalog/templates/catalog/catalog_group.html:12
+#: catalog/templates/catalog/catalog_item.html:13
+#: core/templates/sellers.html:19
+msgid "busca por"
+msgstr "search by"
+
+#: blog/templates/blog/blog_index.html:18
+#: catalog/templates/catalog/catalog_group.html:18
+#: catalog/templates/catalog/catalog_item.html:19
+#: core/templates/sellers.html:25
+msgid "Buscar"
+msgstr "Search"
+
+#: blog/templates/blog/blog_index.html:24
+msgid ""
+"No nosso blog vamos contar pra você semanalmente várias dicas sobre frutas e "
+"alimentos e como elas podem contribuir para você ter muito mais saúde, "
+"acompanhe nossos posts e viva bem melhor"
+msgstr ""
+"In our blog we will tell you weekly tips about various fruits andfoods and "
+"how they can help you have more health,accompany our posts and live better"
+
+#: blog/templates/blog/blog_index.html:55
+msgid "Aguardando conteúdo"
+msgstr "Waiting for content"
+
+#: blog/templates/blog/blog_index.html:71
+#: catalog/templates/catalog/catalog_group.html:64
+#: catalog/templates/catalog/catalog_item.html:104
+#: core/templates/sellers.html:65
+msgid "Página"
+msgstr "Page"
+
+#: blog/templates/blog/blog_index.html:71
+#: catalog/templates/catalog/catalog_group.html:64
+#: catalog/templates/catalog/catalog_item.html:104
+#: core/templates/sellers.html:65
+msgid "de"
+msgstr "of"
+
+#: catalog/models.py:16
+msgid "Valor Energético"
+msgstr "Energetic Value"
+
+#: catalog/models.py:17
+msgid "Carboidratos"
+msgstr "Carbohydrates"
+
+#: catalog/models.py:18
+msgid "Proteínas"
+msgstr "Proteins"
+
+#: catalog/models.py:19
+msgid "Gorduras Totais"
+msgstr "Total Fat"
+
+#: catalog/models.py:20
+msgid "Gorduras Saturadas"
+msgstr "Saturated Fats"
+
+#: catalog/models.py:21
+msgid "Gorduras Trans"
+msgstr "Trans Fats"
+
+#: catalog/models.py:22
+msgid "Fibra Alimentar"
+msgstr "Dietary Fiber"
+
+#: catalog/models.py:23
+msgid "Sódio"
+msgstr "Sodium"
+
+#: catalog/models.py:24
+msgid "Cálcio"
+msgstr "Calcium"
+
+#: catalog/models.py:25
+msgid "Ferro"
+msgstr "Iron"
+
+#: catalog/models.py:38 catalog/models.py:97 core/models.py:66
+#: core/models.py:155 core/models.py:237 core/templates/sellers.html:38
+#: talents/models.py:78
+msgid "Nome"
+msgstr "Name"
+
+#: catalog/models.py:39 catalog/models.py:99 core/models.py:238
+msgid "Nome Slug"
+msgstr "Slug Name"
+
+#: catalog/models.py:41 catalog/models.py:101 catalog/models.py:162
+#: catalog/templates/catalog/catalog_item.html:51 core/models.py:107
+#: core/models.py:156 core/models.py:188 talents/models.py:31
+msgid "Descrição"
+msgstr "Description"
+
+#: catalog/models.py:44 catalog/models.py:105 catalog/models.py:166
+#: core/models.py:68 core/models.py:136 core/models.py:244
+msgid "Visível no site?"
+msgstr "Visible on site?"
+
+#: catalog/models.py:89
+msgid "Grupo de Produto"
+msgstr "Product Group"
+
+#: catalog/models.py:90
+msgid "Grupo de Produtos"
+msgstr "Products Group"
+
+#: catalog/models.py:96 catalog/models.py:159
+msgid "Grupo do Produto"
+msgstr "Product Group"
+
+#: catalog/models.py:152 catalog/models.py:161
+msgid "Produto"
+msgstr "Product"
+
+#: catalog/models.py:153 core/templates/base.html:87
+msgid "Produtos"
+msgstr "Products"
+
+#: catalog/models.py:164 catalog/templates/catalog/catalog_item.html:52
+msgid "Quantidade"
+msgstr "Amount"
+
+#: catalog/models.py:165 catalog/templates/catalog/catalog_item.html:53
+msgid "Valor Diário"
+msgstr "Daily Value"
+
+#: catalog/models.py:181
+msgid "Informação Nutricional"
+msgstr "Nutritional Information"
+
+#: catalog/models.py:182
+msgid "Informações Nutricionais"
+msgstr "Nutritional Information"
+
+#: catalog/templates/catalog/catalog_group.html:12
+msgid "Nossa Linha de Produtos"
+msgstr "Our Product Line"
+
+#: catalog/templates/catalog/catalog_group.html:49
+msgid "Nenhum grupo de produtos encontrado"
+msgstr "No group of products found"
+
+#: catalog/templates/catalog/catalog_item.html:13
+msgid "Nossos Produtos"
+msgstr "Our Products"
+
+#: catalog/templates/catalog/catalog_item.html:39 core/templates/home.html:32
+#: core/templates/home.html.py:60
+msgid "Sem Imagem"
+msgstr "No Image"
+
+#: catalog/templates/catalog/catalog_item.html:66
+msgid "Nenhuma informação encontrada"
+msgstr "No information found"
+
+#: catalog/templates/catalog/catalog_item.html:73
+msgid ""
+"\n"
+"                                        *Valores diários de referência com "
+"base em uma\n"
+"                                        dieta de 2.000kcal ou 8.400kj para "
+"adultos.\n"
+"                                        Seus valores diários podem ser "
+"maiores dependendo\n"
+"                                        de suas necessidades energéticas. "
+"**Valores\n"
+"                                        não especificados.\n"
+"                                        "
+msgstr ""
+"\n"
+"                                        * Percentage Daily Values ​​are "
+"based on a\n"
+"                                        2,000 kcal diet or to 8.400kj "
+"adults.\n"
+"                                        Your daily values may be "
+"higher depending\n"
+"                                        Its energy needs. "
+"**Values\n"
+"                                        not specified.\n"
+"                                        "
+
+#: catalog/templates/catalog/catalog_item.html:92
+msgid "Nenhum produto encontrado"
+msgstr "No product found"
+
+#: core/forms.py:11
+msgid "--- Escolha um assunto ---"
+msgstr "--- Select subject ---"
+
+#: core/forms.py:12
+msgid "Dúvida"
+msgstr "Query"
+
+#: core/forms.py:13
+msgid "Elogio"
+msgstr "Eulogy"
+
+#: core/forms.py:14
+msgid "SAC"
+msgstr "SAC"
+
+#: core/forms.py:15
+msgid "Informação"
+msgstr "Information"
+
+#: core/forms.py:16
+msgid "Reclamação"
+msgstr "Reclamation"
+
+#: core/forms.py:17 core/models.py:230 core/models.py:231
+msgid "Venda"
+msgstr "Sale"
+
+#: core/models.py:44
+msgid "Meio Ambiente"
+msgstr "Environment"
+
+#: core/models.py:45
+msgid "Funcionários"
+msgstr "Employee"
+
+#: core/models.py:46
+msgid "Sociedade"
+msgstr "Society"
+
+#: core/models.py:50 core/models.py:100 core/models.py:101
+#: core/templates/base.html:85 core/templates/institutional.html:11
+msgid "Institucional"
+msgstr "Institutional"
+
+#: core/models.py:51 core/templates/institutional.html:26
+msgid "Nossa Missão"
+msgstr "Our Mission"
+
+#: core/models.py:56
+msgid "Representante"
+msgstr "Representative"
+
+#: core/models.py:60
+msgid "Principal"
+msgstr "Main"
+
+#: core/models.py:61
+msgid "Secundário"
+msgstr "Secondary"
+
+#: core/models.py:67
+msgid "Logo"
+msgstr "Logo"
+
+#: core/models.py:79
+msgid "Cliente"
+msgstr "Customer"
+
+#: core/models.py:80 core/templates/institutional.html:57
+msgid "Clientes"
+msgstr "Customers"
+
+#: core/models.py:85
+msgid "Área"
+msgstr "Area"
+
+#: core/models.py:105
+msgid "Ícone"
+msgstr "Icone"
+
+#: core/models.py:108
+msgid "Ordem"
+msgstr "Order"
+
+#: core/models.py:114
+msgid "Proposta de Valor"
+msgstr "Value Proposition"
+
+#: core/models.py:115
+msgid "Propostas de Valor"
+msgstr "Value Proposition"
+
+#: core/models.py:120 core/models.py:150 core/models.py:189
+#: talents/models.py:32
+msgid "Banner"
+msgstr "Banner"
+
+#: core/models.py:127
+msgid "Texto"
+msgstr "Text"
+
+#: core/models.py:131
+msgid "Texto do botão"
+msgstr "Text Button"
+
+#: core/models.py:133
+msgid "Link do botão"
+msgstr "Link Button"
+
+#: core/models.py:151
+msgid "Banners"
+msgstr "Banner"
+
+#: core/models.py:158
+msgid "CNPJ"
+msgstr "CNPJ"
+
+#: core/models.py:160 core/templates/contact.html:20 talents/models.py:79
+msgid "Endereço"
+msgstr "Address"
+
+#: core/models.py:161 talents/models.py:80
+msgid "Número"
+msgstr "Number"
+
+#: core/models.py:162 talents/models.py:81
+msgid "Complemento"
+msgstr "Complement"
+
+#: core/models.py:163 talents/models.py:83
+msgid "CEP"
+msgstr "CEP"
+
+#: core/models.py:165 talents/models.py:85
+msgid "Bairro"
+msgstr "District"
+
+#: core/models.py:166 talents/models.py:86
+msgid "Cidade"
+msgstr "City"
+
+#: core/models.py:167 core/models.py:243 core/templates/sellers.html:42
+#: talents/models.py:87
+msgid "UF"
+msgstr "State"
+
+#: core/models.py:168 talents/models.py:88
+msgid "País"
+msgstr "Country"
+
+#: core/models.py:169
+msgid "Fone 1"
+msgstr "Phone 1"
+
+#: core/models.py:171
+msgid "Fone 2"
+msgstr "Phone 2"
+
+#: core/models.py:174
+msgid "Fone 3 (Fax)"
+msgstr "Phone 3"
+
+#: core/models.py:177 core/models.py:242 core/templates/sellers.html:40
+#: talents/models.py:91
+msgid "Email"
+msgstr "Email"
+
+#: core/models.py:183 core/models.py:184
+msgid "Empresa"
+msgstr "Enterprise"
+
+#: core/models.py:235
+msgid "Tipo"
+msgstr "Type"
+
+#: core/models.py:240 core/templates/contact.html:29
+#: core/templates/sellers.html:39 talents/models.py:89
+msgid "Fone"
+msgstr "Phone"
+
+#: core/models.py:255
+msgid "Representante e Distribuidor"
+msgstr "Representative and Distributor"
+
+#: core/models.py:256
+msgid "Representantes e Distribuidores"
+msgstr "Representative and Distributor"
+
+#: core/templates/base.html:7
+msgid "Polpa de Fruta Canaã"
+msgstr "Fruit Pulp Canaã"
+
+#: core/templates/base.html:89
+msgid "Vendas"
+msgstr "Sales"
+
+#: core/templates/base.html:91 talents/templates/talents/talent.html:11
+msgid "Trabalhe Conosco"
+msgstr "Work With Us"
+
+#: core/templates/base.html:93 core/templates/contact.html:11
+#: talents/templates/talents/talent.html:36
+msgid "Contato"
+msgstr "Contact"
+
+#: core/templates/contact.html:42
+msgid "E-mail"
+msgstr "Email"
+
+#: core/templates/contact.html:50
+msgid "Envie uma mensagem"
+msgstr "Send a message"
+
+#: core/templates/contact.html:53
+msgid "Mensagem enviada com sucesso"
+msgstr "Message sent successfully"
+
+#: core/templates/contact.html:68
+msgid "Enviar Mensagem"
+msgstr "Send Message"
+
+#: core/templates/home.html:42 core/templates/home.html.py:70
+msgid "veja mais"
+msgstr "see more"
+
+#: core/templates/institutional.html:62
+msgid "Nenhum cliente encontrado"
+msgstr "No customer found"
+
+#: core/templates/sellers.html:11 core/templates/sellers.html.py:19
+msgid "Representantes"
+msgstr "Representative"
+
+#: core/templates/sellers.html:54
+msgid "Nenhum representante encontrado"
+msgstr "No representative found"
+
+#: talents/models.py:73 talents/models.py:74
+msgid "Início"
+msgstr "Home"
+
+#: talents/models.py:92
+msgid "Nascimento"
+msgstr "Birth"
+
+#: talents/models.py:93
+msgid "Sexo"
+msgstr "Sex"
+
+#: talents/models.py:94
+msgid "Formação"
+msgstr "Formation"
+
+#: talents/models.py:96
+msgid "Resumo da Qualificação"
+msgstr "Qualification Resum"
+
+#: talents/models.py:97
+msgid "Experiência Profissional"
+msgstr "Professional Expertise"
+
+#: talents/models.py:98
+msgid "Empresa 1"
+msgstr "Enterprise 1"
+
+#: talents/models.py:100
+msgid "Contato na Empresa 1"
+msgstr "Contact Enterprise 1"
+
+#: talents/models.py:102
+msgid "Período 1"
+msgstr "Period 1"
+
+#: talents/models.py:104
+msgid "Cargo 1"
+msgstr "Function 1"
+
+#: talents/models.py:106
+msgid "Principais Atividades 1"
+msgstr "Activies Main 1"
+
+#: talents/models.py:108
+msgid "Empresa 2"
+msgstr "Enterprise 2"
+
+#: talents/models.py:110
+msgid "Contato na Empresa 2"
+msgstr "Contact Enterprise 2"
+
+#: talents/models.py:112
+msgid "Período 2"
+msgstr "Period 2"
+
+#: talents/models.py:114
+msgid "Cargo 2"
+msgstr "Function 2"
+
+#: talents/models.py:116
+msgid "Principais Atividades 2"
+msgstr "Activies Main 2"
+
+#: talents/models.py:118
+msgid "Empresa 3"
+msgstr "Enterprise 3"
+
+#: talents/models.py:120
+msgid "Contato na Empresa 3"
+msgstr "Contact Enterprise 3"
+
+#: talents/models.py:122
+msgid "Período 3"
+msgstr "Period 3"
+
+#: talents/models.py:124
+msgid "Cargo 3"
+msgstr "Function 3"
+
+#: talents/models.py:126
+msgid "Principais Atividades 3"
+msgstr "Activies Main 3"
+
+#: talents/models.py:128
+msgid "Cursos"
+msgstr "Courses"
+
+#: talents/models.py:129
+msgid "Referências Pessoais"
+msgstr "Personal References"
+
+#: talents/models.py:130
+msgid "Arquivo"
+msgstr "Attach"
+
+#: talents/models.py:144
+msgid "Talento"
+msgstr "Talent"
+
+#: talents/models.py:145
+msgid "Talentos"
+msgstr "Talents"
+
+#: talents/templates/talents/talent.html:21
+msgid "Envie seu currículo"
+msgstr "Send your resume"
+
+#: talents/templates/talents/talent.html:31
+msgid "Enviar Currículo"
+msgstr "Submit Resume"
+
+#, fuzzy
+#~ msgid "Português Brasileiro"
+#~ msgstr "Portuguese"
+
+#~ msgid "Espanhol"
+#~ msgstr "Spanish"

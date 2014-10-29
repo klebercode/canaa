@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
-{% block nav_sellers %} class="active"{% endblock %}
+{% load i18n %}
+
+{% block nav_representative %} class="active"{% endblock %}
 
 {% block content %}
 
     <div class="k-content">
         <div class="row-fluid">
-            <h3>Representantes</h3>
+            <h3>{% trans 'Representantes' %}</h3>
             <img class="k-top marg20-btm" src="{{ sale.image.url }}" width="100%">
             <p>{{ sale.content }}</p>
         </div>
@@ -14,13 +16,13 @@
         <!-- Search -->
         <div class="row-fluid marg30-top">
             <span class="span7">
-                <h4>Representantes {% if search %}<small>busca por "{{ search }}"</small>{% endif %}</h4>
+                <h4>{% trans 'Representantes' %} {% if search %}<small>{% trans 'busca por' %} "{{ search }}"</small>{% endif %}</h4>
             </span>
             <span class="span5">
                 <div class="search-form">
                     <form role="form" action="#" method="get">
                         <div class="input-append">
-                          <input class="span10" id="search" type="text" name="search" placeholder="Buscar">
+                          <input class="span10" id="search" type="text" name="search" placeholder="{% trans 'Buscar' %}">
                           <button class="btn btn-info" type="submit"><i class="icon-search visible-phone"></i><span class="hidden-phone"><i class="icon-search"></i></span></button>
                         </div>
                     </form>
@@ -33,11 +35,11 @@
             <table cellspacing="0" width="100%">
                 <tbody>
                     <tr>
-                        <th>Nome</th>
-                        <th>Fone</th>
-                        <th>Email</th>
+                        <th>{% trans 'Nome' %}</th>
+                        <th>{% trans 'Fone' %}</th>
+                        <th>{% trans 'Email' %}</th>
                         <!--th>Tipo</th-->
-                        <th>UF</th>
+                        <th>{% trans 'UF' %}</th>
                     </tr>
                     {% for seller in sellers %}
                     <tr class="{% if forloop.counter|divisibleby:2 %}even{% endif %}">
@@ -49,7 +51,7 @@
                     </tr>
                     {% empty %}
                     <tr>
-                        <td colspan="4" align="center"><br>Nenhum Representante/Distribuidor encontrado.<br><br></td>
+                        <td colspan="4" align="center"><br>{% trans 'Nenhum representante encontrado' %}.<br><br></td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -60,7 +62,7 @@
                         <li><a href="?page={{ sellers.previous_page_number }}">&laquo;</a></li>
                     {% endif %}
 
-                    <li><a href="{{ sellers.number.url }}">Página {{ sellers.number }} de {{ sellers.paginator.num_pages }}</a></li>
+                    <li><a href="{{ sellers.number.url }}">{% trans 'Página' %} {{ sellers.number }} {% trans 'de' %} {{ sellers.paginator.num_pages }}</a></li>
 
                     {% if sellers.has_next %}
                         <li><a href="?page={{ sellers.next_page_number }}">&raquo;</a></li>

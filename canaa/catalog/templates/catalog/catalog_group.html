@@ -1,19 +1,21 @@
 {% extends "base.html" %}
 
-{% block nav_products %} class="active"{% endblock %}
+{% load i18n %}
+
+{% block nav_product %} class="active"{% endblock %}
 
 {% block content %}
 
     <div class="k-content products">
         <div class="row-fluid">
             <span class="span8">
-                <h3>Nossa Linha de Produtos {% if search %}<small>busca por "{{ search }}"</small>{% endif %}</h3>
+                <h3>{% trans 'Nossa Linha de Produtos' %} {% if search %}<small>{% trans 'busca por' %} "{{ search }}"</small>{% endif %}</h3>
             </span>
             <span class="span4">
                 <div class="search-form">
                     <form role="form" action="." method="get">
                         <div class="input-append">
-                          <input class="span10" id="search" type="text" name="search" placeholder="Buscar">
+                          <input class="span10" id="search" type="text" name="search" placeholder="{% trans 'Buscar' %}">
                           <button class="btn btn-info" type="submit"><i class="icon-search visible-phone"></i><span class="hidden-phone"><i class="icon-search"></i></span></button>
                         </div>
                     </form>
@@ -44,7 +46,7 @@
                       </li>
                       <!-- break -->
                       {% empty %}
-                      <p>Nenhum grupo de produtos encontrado.</p>
+                      <p>{% trans 'Nenhum grupo de produtos encontrado' %}.</p>
                       {% endfor %}
                       <!-- end:loop-article -->
                     </ul>
@@ -59,7 +61,7 @@
                                     <li><a href="?page={{ groups.previous_page_number }}">&laquo;</a></li>
                                 {% endif %}
 
-                                <li><a href="{{ groups.number.url }}">Página {{ groups.number }} de {{ groups.paginator.num_pages }}</a></li>
+                                <li><a href="{{ groups.number.url }}">{% trans 'Página' %} {{ groups.number }} {% trans 'de' %} {{ groups.paginator.num_pages }}</a></li>
 
                                 {% if groups.has_next %}
                                     <li><a href="?page={{ groups.next_page_number }}">&raquo;</a></li>

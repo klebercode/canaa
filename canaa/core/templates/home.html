@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load i18n %}
+
 {% load thumbnail %}
 
 {% block content %}
@@ -27,7 +29,7 @@
                     {% thumbnail p.image "140x140" crop="center" format="PNG" as im %}
                         <img src="{{ im.url }}" alt="{{ p.name }}" class="img-responsive">
                     {% empty %}
-                        <p>Sem Imagem</p>
+                        <p>{% trans 'Sem Imagem' %}</p>
                     {% endthumbnail %}
                 </a>
             </div>
@@ -37,7 +39,7 @@
                     <p>{{ p.description|slice:":65" }} ...</p>
                 </div>
                 <a class="btn btn-k-item_num{{ forloop.counter }} btn-small" href="{{ p.get_absolute_url }}?search={{ p.name }}">
-                    <span>veja mais</span>
+                    <span>{% trans 'veja mais' %}</span>
                 </a>
             </div>
         </div>
@@ -55,7 +57,7 @@
                     {% thumbnail b.image "209x142" crop="center" format="PNG" as im %}
                         <img src="{{ im.url }}" alt="{{ b.title }}" class="img-responsive">
                     {% empty %}
-                        <p>Sem Imagem</p>
+                        <p>{% trans 'Sem Imagem' %}</p>
                     {% endthumbnail %}
                 </a>
             </div>
@@ -65,7 +67,7 @@
                     <p>{{ b.body|slice:":80" }} ...</p>
                 </div>
                 <a class="btn btn-red btn-small" href="{{ b.get_absolute_url }}">
-                    <span>veja mais</span>
+                    <span>{% trans 'veja mais' %}</span>
                 </a>
             </div>
         </div>

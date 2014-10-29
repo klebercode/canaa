@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load i18n %}
+
 {% block nav_blog %} class="active"{% endblock %}
 
 {% block content %}
@@ -7,19 +9,19 @@
 	<div class="k-content">
         <div class="row-fluid marg20-btm">
             <span class="span8">
-			    <h3>+Saúde {% if search %}<small>busca por "{{ search }}"</small>{% endif %}</h3>
+			    <h3>{% trans '+Saúde' %} {% if search %}<small>{% trans 'busca por' %} "{{ search }}"</small>{% endif %}</h3>
             </span>
             <span class="span4 products">
                 <div class="search-form">
                     <form role="form" action="#" method="get">
                         <div class="input-append">
-                          <input class="span10" id="search" type="text" name="search" placeholder="Buscar">
+                          <input class="span10" id="search" type="text" name="search" placeholder="{% trans 'Buscar' %}">
                           <button class="btn btn-info" type="submit"><i class="icon-search visible-phone"></i><span class="hidden-phone"><i class="icon-search"></i></span></button>
                         </div>
                     </form>
                 </div>
             </span>
-            <p>No nosso blog vamos contar pra você semanalmente várias dicas sobre frutas e alimentos e como elas podem contribuir para você ter muito mais saúde, acompanhe nossos posts e viva bem melhor!</p>
+            <p>{% trans 'No nosso blog vamos contar pra você semanalmente várias dicas sobre frutas e alimentos e como elas podem contribuir para você ter muito mais saúde, acompanhe nossos posts e viva bem melhor' %}!</p>
 		</div>
 
 		<!-- begin:content -->
@@ -50,7 +52,7 @@
                                 </div>
                             </li>
                             {% empty %}
-                            <p>Aguardando conteúdo.</p>
+                            <p>{% trans 'Aguardando conteúdo' %}.</p>
                             {% endfor %}
                             <!-- end:loop-article -->
                         </ul>
@@ -66,7 +68,7 @@
                                         <li><a href="?page={{ posts.previous_page_number }}">&laquo;</a></li>
                                     {% endif %}
 
-                                    <li><a href="{{ posts.number.url }}">Página {{ posts.number }} de {{ posts.paginator.num_pages }}</a></li>
+                                    <li><a href="{{ posts.number.url }}">{% trans 'Página' %} {{ posts.number }} {% trans 'de' %} {{ posts.paginator.num_pages }}</a></li>
 
                                     {% if posts.has_next %}
                                         <li><a href="?page={{ posts.next_page_number }}">&raquo;</a></li>

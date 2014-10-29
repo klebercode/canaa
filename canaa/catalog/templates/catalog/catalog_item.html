@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+{% load i18n %}
 {% load thumbnail %}
 
 {% block nav_products %} class="active"{% endblock %}
@@ -9,13 +10,13 @@
     <div class="k-content products">
         <div class="row-fluid">
             <span class="span8">
-                <h3>Nossos Produtos {% if search %}<small>busca por "{{ search }}"</small>{% endif %}</h3>
+                <h3>{% trans 'Nossos Produtos' %} {% if search %}<small>{% trans 'busca por' %} "{{ search }}"</small>{% endif %}</h3>
             </span>
             <span class="span4">
                 <div class="search-form">
                     <form role="form" action="." method="get">
                         <div class="input-append">
-                          <input class="span10" id="search" type="text" name="search" placeholder="Buscar">
+                          <input class="span10" id="search" type="text" name="search" placeholder="{% trans 'Buscar' %}">
                           <button class="btn btn-info" type="submit"><i class="icon-search visible-phone"></i><span class="hidden-phone"><i class="icon-search"></i></span></button>
                         </div>
                     </form>
@@ -35,7 +36,7 @@
                                     {% thumbnail product.image "279x279" crop="center" format="PNG" as im %}
                                     <img src="{{ im.url }}" alt="{{ product.name }}">
                                     {% empty %}
-                                    <p>Sem Imagem</p>
+                                    <p>{% trans 'Sem Imagem' %}</p>
                                     {% endthumbnail %}
                                 </div>
                             </div>
@@ -47,13 +48,13 @@
                         <table cellspacing="0" width="100%">
                             <tbody>
                                 <tr>
-                                    <th>Descrição</th>
-                                    <th>Quantidade</th>
-                                    <th>% Valor Diário</th>
+                                    <th>{% trans 'Descrição' %}</th>
+                                    <th>{% trans 'Quantidade' %}</th>
+                                    <th>% {% trans 'Valor Diário' %}</th>
                                 </tr>
                                 {% for info in infos %}
                                     {% if info.product_id == product.pk %}
-                                    <tr class="{% if forloop.counter|divisibleby:2 %}even{% endif %}">
+                                    <tr class="{% if forloop.counter|divisibleby:2 %}even{% else %}no{% endif %}">
                                         <td>{{ info.get_description_display }}</td>
                                         <td align="center">{{ info.amount }}</td>
                                         <td align="center">{{ info.value }}</td>
@@ -62,17 +63,21 @@
                                 {% empty %}
                                     <tr>
                                         <td colspan="3" align="center">
-                                            Nenhuma informação encontrada.
+                                            {% trans 'Nenhuma informação encontrada' %}.
                                         </td>
                                     </tr>
                                 {% endfor %}
                                 <tr>
                                     <td colspan="3" >
-                                        <small>*Valores diários de referência com base em uma
+                                        <small>
+                                        {% blocktrans %}
+                                        *Valores diários de referência com base em uma
                                         dieta de 2.000kcal ou 8.400kj para adultos.
                                         Seus valores diários podem ser maiores dependendo
                                         de suas necessidades energéticas. **Valores
-                                        não especificados.</small>
+                                        não especificados.
+                                        {% endblocktrans %}
+                                        </small>
                                     </td>
                                 </tr>
                             </tbody>
@@ -84,7 +89,7 @@
             <!-- end:produtos -->
         </div>
         {% empty %}
-        <p>Nenhum produto encontrado.</p>
+        <p>{% trans 'Nenhum produto encontrado' %}.</p>
         {% endfor %}
 
         <!--begin:pagination-->
@@ -96,7 +101,7 @@
                             <li><a href="?page={{ products.previous_page_number }}">&laquo;</a></li>
                         {% endif %}
 
-                        <li><a href="{{ products.number.url }}">Página {{ products.number }} de {{ products.paginator.num_pages }}</a></li>
+                        <li><a href="{{ products.number.url }}">{% trans 'Página' %} {{ products.number }} {% trans 'de' %} {{ products.paginator.num_pages }}</a></li>
 
                         {% if products.has_next %}
                             <li><a href="?page={{ products.next_page_number }}">&raquo;</a></li>
