@@ -19,16 +19,16 @@ SUBJECT_CHOICES = (
 
 
 class ContactForm(forms.Form):
-    name = forms.CharField(label=u'Nome',
+    name = forms.CharField(label=_(u'Nome'),
                            widget=forms.TextInput(attrs={'class':
                                                   'span12'}))
-    email = forms.EmailField(label=u'E-mail',
+    email = forms.EmailField(label=_(u'E-mail'),
                              widget=forms.EmailInput(attrs={'class':
                                                      'span12'}))
-    subject = forms.ChoiceField(label=u'Assunto', choices=SUBJECT_CHOICES,
+    subject = forms.ChoiceField(label=_(u'Assunto'), choices=SUBJECT_CHOICES,
                                 widget=forms.Select(attrs={'class':
                                                     'span12'}))
-    message = forms.CharField(label=u'Mensagem',
+    message = forms.CharField(label=_(u'Mensagem'),
                               widget=forms.Textarea(attrs={'class':
                                                     'span12',
                                                     'rows': 6}))
@@ -54,7 +54,7 @@ class ContactForm(forms.Form):
 class StepForm(forms.ModelForm):
     description = forms.CharField(widget=forms.Textarea(
                                   attrs={'cols': 60, 'rows': 6,
-                                         'maxlength': 240}))
+                                         'maxlength': 255}))
 
     class Meta:
         model = Step

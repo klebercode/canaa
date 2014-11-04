@@ -2,6 +2,8 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from slim import LanguageField, Slim
+
 from canaa.core.models import STATE_CHOICES
 
 try:
@@ -12,29 +14,30 @@ except ImportError:
 
 
 SEX_CHOICES = (
-    ('Feminino', u'Feminino'),
-    ('Masculino', u'Masculino'),
+    ('Feminino', _(u'Feminino')),
+    ('Masculino', _(u'Masculino')),
 )
 
 FORMATION_CHOICES = (
-    ('EF', u'Ensino Fundamental'),
-    ('EM', u'Ensino Médio'),
-    ('ESC', u'Ensino Superior Completo'),
-    ('ESI', u'Ensino Superior Incompleto'),
-    ('PG', u'Pós Graduado'),
-    ('M', u'Mestrado'),
-    ('D', u'Doutorado'),
+    ('EF', _(u'Ensino Fundamental')),
+    ('EM', _(u'Ensino Médio')),
+    ('ESC', _(u'Ensino Superior Completo')),
+    ('ESI', _(u'Ensino Superior Incompleto')),
+    ('PG', _(u'Pós Graduado')),
+    ('M', _(u'Mestrado')),
+    ('D', _(u'Doutorado')),
 )
 
 
-class Page(models.Model):
+class Page(models.Model, Slim):
     content = models.TextField(_(u'Descrição'))
     image = models.ImageField(_(u'Banner'), upload_to='talent')
+    language = LanguageField()
 
     def admin_image(self):
         return '<img src="%s" width="300" />' % self.image.url
     admin_image.allow_tags = True
-    admin_image.short_description = u'Banner'
+    admin_image.short_description = _(u'Banner')
 
     def save(self, *args, **kwargs):
         if not self.id and not self.image:
@@ -133,9 +136,9 @@ class Talent(models.Model):
         if self.attach:
             return "<a href='%s'>Baixar</a>" % self.attach.url
         else:
-            return "Nenhum arquivo encontrado"
+            return _(u'Nenhum arquivo encontrado')
     attach_link.allow_tags = True
-    attach_link.short_description = "Arquivo"
+    attach_link.short_description = _(u'Arquivo')
 
     def __unicode__(self):
         return self.name

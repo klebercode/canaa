@@ -50,9 +50,10 @@
                 <form action="{% url 'set_language' %}" method="post" class="no-margin">
                   {% csrf_token %}
                   <input type="hidden" name="language" />
+                  <input type="hidden" name="next" value="/" />
                   {% get_language_info_list for LANGUAGES as languages %}
                   {% for language in languages %}
-                    <a {% if LANGUAGE_CODE == language.code  %}class="active"{% endif %} href="javascript:;" class="btn-setlang" data-language="{{ language.code }}">
+                    <a {% if LANGUAGE_CODE == language.code %}class="active"{% endif %} href="javascript:;" class="btn-setlang" data-language="{{ language.code }}">
                         <img src="{{ STATIC_URL }}img/{{ language.code }}_active.png" alt="{{ language.name_local }}" width="16" />
                     </a>
                   {% endfor %}

@@ -3,7 +3,7 @@
 {% load i18n %}
 {% load thumbnail %}
 
-{% block nav_products %} class="active"{% endblock %}
+{% block nav_product %} class="active"{% endblock %}
 
 {% block content %}
 
@@ -44,7 +44,9 @@
                     </div>
                     <div class="span8 pull-right">
                         <h4>{{ product.product_group }} - {{ product.name }}</h4>
+                        {% autoescape off %}
                         <p>{{ product.description }}</p><br>
+                        {% endautoescape %}
                         <table cellspacing="0" width="100%">
                             <tbody>
                                 <tr>

@@ -3,6 +3,8 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.template.defaultfilters import slugify
 
+from slim import LanguageField, Slim
+
 try:
     from PIL import Image, ImageOps
 except ImportError:
@@ -81,12 +83,13 @@ class Customer(models.Model):
         ordering = ['name']
 
 
-class Institutional(models.Model):
+class Institutional(models.Model, Slim):
     area = models.IntegerField(_(u'Área'), choices=INSTITUTIONAL_CHOICES,
                                help_text='Área no menu institucional')
     content = models.TextField(_(u'Conteúdo'), help_text='Conteúdo a ser \
                                exibido no institucional.')
     image = models.ImageField(_(u'Imagem'), upload_to='institutional')
+    language = LanguageField()
 
     def admin_image(self):
         return '<img src="%s" width="150" />' % self.image.url
@@ -101,11 +104,12 @@ class Institutional(models.Model):
         verbose_name_plural = _(u'Institucional')
 
 
-class Step(models.Model):
+class Step(models.Model, Slim):
     icon = models.CharField(_(u'Ícone'), max_length=20, choices=ICON_CHOICES)
     title = models.CharField(_(u'Título'), max_length=20)
-    description = models.CharField(_(u'Descrição'), max_length=250)
+    description = models.CharField(_(u'Descrição'), max_length=255)
     order = models.IntegerField(_(u'Ordem'), default=0)
+    language = LanguageField()
 
     def __unicode__(self):
         return self.title
@@ -116,7 +120,7 @@ class Step(models.Model):
         ordering = ('order',)
 
 
-class Banner(models.Model):
+class Banner(models.Model, Slim):
     type = models.IntegerField(_(u'Banner'), choices=BANNER_CHOICES, default=1)
     image = models.ImageField(_(u'Imagem'), upload_to=u'banner',
                               help_text='Tamanho: 1920x2977 px',
@@ -134,6 +138,7 @@ class Banner(models.Model):
                             help_text='Ex: intitucional ou \
                             mais-saude/acerola-magica')
     visible = models.BooleanField(_(u'Visível no site?'), default=True)
+    language = LanguageField()
 
     def back_image(self):
         if self.image:
@@ -184,9 +189,10 @@ class Enterprise(models.Model):
         verbose_name_plural = _(u'Empresa')
 
 
-class Sale(models.Model):
+class Sale(models.Model, Slim):
     content = models.TextField(_(u'Descrição'))
     image = models.ImageField(_(u'Banner'), upload_to='sale')
+    language = LanguageField()
 
     def admin_image(self):
         return '<img src="%s" width="300" />' % self.image.url

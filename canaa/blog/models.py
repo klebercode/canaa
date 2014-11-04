@@ -8,6 +8,8 @@ from django.utils.translation import ugettext_lazy as _
 
 from sorl.thumbnail import ImageField
 from tinymce import models as tinymce_models
+from slim import LanguageField, Slim
+# from slim.models.decorators import auto_prepend_language
 
 try:
     from PIL import Image
@@ -17,8 +19,9 @@ except ImportError:
 from canaa.current_user import get_current_user
 
 
-class Blog(models.Model):
+class Blog(models.Model, Slim):
     content = models.TextField(_(u'Conteúdo'))
+    language = LanguageField()
 
     def __unicode__(self):
         return unicode(self.content)
@@ -28,7 +31,7 @@ class Blog(models.Model):
         verbose_name_plural = _(u'Blog')
 
 
-class Post(models.Model):
+class Post(models.Model, Slim):
     title = models.CharField(_(u'Título'), max_length=100)
     slug = models.SlugField(_(u'Título Slug'), max_length=100,
                             unique=True, editable=False)
@@ -38,6 +41,7 @@ class Post(models.Model):
     body = tinymce_models.HTMLField(verbose_name=u'Conteúdo')
     image = ImageField(_(u'Imagem'), upload_to=u'blog',
                        help_text='Tamanho Ideal 898x611 px')
+    language = LanguageField()
 
     def admin_image(self):
         if self.image:
@@ -78,6 +82,7 @@ class Post(models.Model):
         # image = ImageOps.fit(image, size, Image.ANTIALIAS)
         image.save(self.image.path, 'JPEG', quality=99)
 
+    # @auto_prepend_language
     def get_absolute_url(self):
         return reverse('blog:post', kwargs={"slug": self.slug})
 

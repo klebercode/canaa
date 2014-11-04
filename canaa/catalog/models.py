@@ -5,6 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.template.defaultfilters import slugify
 
 from sorl.thumbnail import ImageField
+from slim import LanguageField, Slim
 
 try:
     from PIL import Image
@@ -34,7 +35,7 @@ def get_display(key, list):
     return None
 
 
-class ProductGroup(models.Model):
+class ProductGroup(models.Model, Slim):
     name = models.CharField(_(u'Nome'), max_length=50)
     slug = models.SlugField(_(u'Nome Slug'), max_length=50,
                             unique=True, editable=False)
@@ -42,6 +43,7 @@ class ProductGroup(models.Model):
     image = ImageField(_(u'Imagem'), upload_to='product_group',
                        help_text='Tamanho: 285x214 px (Ideal)')
     visible = models.BooleanField(_(u'Visível no site?'), default=True)
+    language = LanguageField()
 
     def admin_image(self):
         return '<img src="%s" width="200" />' % self.image.url
@@ -91,7 +93,7 @@ class ProductGroup(models.Model):
         ordering = ('name',)
 
 
-class Product(models.Model):
+class Product(models.Model, Slim):
     product_group = models.ForeignKey('ProductGroup',
                                       verbose_name=_(u'Grupo do Produto'))
     name = models.CharField(_(u'Nome'), max_length=120,
@@ -103,6 +105,7 @@ class Product(models.Model):
     image = ImageField(_(u'Imagem'), upload_to=u'product',
                        help_text='Tamanho: 279x270 px (Ideal)')
     visible = models.BooleanField(_(u'Visível no site?'), default=True)
+    language = LanguageField()
 
     def admin_image(self):
         return '<img src="%s" width="200" />' % self.image.url
@@ -154,7 +157,7 @@ class Product(models.Model):
         ordering = ('name',)
 
 
-class ProductInfo(models.Model):
+class ProductInfo(models.Model, Slim):
     product_group = models.ForeignKey('ProductGroup',
                                       verbose_name=_(u'Grupo do Produto'),
                                       editable=False)
@@ -164,6 +167,7 @@ class ProductInfo(models.Model):
     amount = models.CharField(_(u'Quantidade'), max_length=30)
     value = models.CharField(_(u'Valor Diário'), max_length=2, default='**')
     visible = models.BooleanField(_(u'Visível no site?'), default=True)
+    language = LanguageField()
 
     def save(self, *args, **kwargs):
         """

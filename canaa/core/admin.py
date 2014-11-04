@@ -1,6 +1,8 @@
 # coding: utf-8
 from django.contrib import admin
 
+from slim.admin import SlimAdmin
+
 from canaa.core.models import (Customer, Institutional, Step,
                                Enterprise, Sale, Seller, Banner)
 from canaa.core.forms import (StepForm, BannerForm)
@@ -11,22 +13,48 @@ class CustomerAdmin(admin.ModelAdmin):
     search_fields = ('name',)
 
 
-class InstitutionalAdmin(admin.ModelAdmin):
+class InstitutionalAdmin(SlimAdmin):
     list_display = ('content',)
     search_fields = ('content',)
 
+    collapse_slim_fieldset = False
 
-class StepAdmin(admin.ModelAdmin):
-    list_display = ('title', 'description')
+    fieldsets = (
+        (None, {
+            'fields': ('area', 'content', 'image')
+        }),
+    )
+
+
+class StepAdmin(SlimAdmin):
+    list_display = ('title', 'description', 'order')
     search_fields = ('title', 'description')
     form = StepForm
 
+    collapse_slim_fieldset = False
 
-class BannerAdmin(admin.ModelAdmin):
+    fieldsets = (
+        (None, {
+            'fields': ('icon', 'title', 'description', 'order')
+        }),
+    )
+
+
+class BannerAdmin(SlimAdmin):
     list_filter = ('type',)
     list_display = ('title', 'back_image', 'type', 'visible',)
     search_fields = ('title', 'text', 'type', 'visible',)
     form = BannerForm
+
+    collapse_slim_fieldset = False
+
+    fieldsets = (
+        (None, {
+            'fields': (
+                'type', 'image', 'title', 'text', 'label', 'link', 'visible'
+            )
+        }),
+    )
 
 
 class EnterpriseAdmin(admin.ModelAdmin):
@@ -36,9 +64,17 @@ class EnterpriseAdmin(admin.ModelAdmin):
                      'phone1', 'phone2', 'phone3', 'email')
 
 
-class SaleAdmin(admin.ModelAdmin):
+class SaleAdmin(SlimAdmin):
     list_display = ('admin_image', 'content',)
     search_fields = ('content',)
+
+    collapse_slim_fieldset = False
+
+    fieldsets = (
+        (None, {
+            'fields': ('content', 'image')
+        }),
+    )
 
 
 class SellerAdmin(admin.ModelAdmin):

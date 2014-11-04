@@ -40,7 +40,9 @@
                             </div>
                             <div class="thumbnail-title">
                                 <h2><a href="{{ group.get_absolute_url }}">{{ group.name }}</a></h2>
+                                {% autoescape off %}
                                 <p>{{ group.description }}</p>
+                                {% endautoescape %}
                             </div>
                         </div>
                       </li>

@@ -1,8 +1,12 @@
 # coding: utf-8
+from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 from django.template import RequestContext
+from django.utils import translation
+
+from slim.helpers import get_language_from_request
 
 from canaa.context_processors import enterprise_proc, back_proc
 
@@ -17,12 +21,23 @@ from canaa.core.forms import ContactForm
 def home(request):
     context = {}
 
-    # banner secundario
-    banner = Banner.objects.filter(visible=True, type=2).order_by('?')[0]
-    # produtos
-    products = Product.objects.filter(visible=True).order_by('?')[0:4]
-    # blog
-    posts = Post.objects.filter().order_by('?')[0:2]
+    language = get_language_from_request(request)
+
+    if language is not None:
+        translation.activate(language)
+
+    try:
+        # banner secundario
+        banner = Banner.objects.filter(
+            language=language, visible=True, type=2).order_by('?')[0]
+        # produtos
+        products = Product.objects.filter(
+            language=language, visible=True).order_by('?')[0:4]
+        # blog
+        posts = Post.objects.filter(language=language).order_by('?')[0:2]
+
+    except Exception as e:
+        raise Http404
 
     context['bannertwo'] = banner
     context['products'] = products
@@ -45,14 +60,28 @@ def marketing(request):
 
 
 def institutional(request):
-    institutional = get_object_or_404(Institutional, area=1)
-    mission = get_object_or_404(Institutional, area=2)
+    language = get_language_from_request(request)
+
+    if language is not None:
+        translation.activate(language)
+
+    try:
+        institutional = Institutional.objects.filter(
+            language=language, area=1)[0]
+        mission = Institutional.objects.filter(
+            language=language, area=2)[0]
+        step = Step.objects.filter(language=language)
+        customer = Customer.objects.filter(visible=True)
+
+    except Exception as e:
+        raise Http404
+
     context = {
         'institutional': institutional,
         'mission': mission,
+        'steps': step,
+        'customers': customer,
     }
-    context['steps'] = Step.objects.all()
-    context['customers'] = Customer.objects.filter(visible=True)
 
     return render(request, 'institutional.html', context,
                   context_instance=RequestContext(request,
@@ -62,12 +91,22 @@ def institutional(request):
 
 
 def sellers(request):
-    sale = get_object_or_404(Sale, pk=1)
+    language = get_language_from_request(request)
+
+    if language is not None:
+        translation.activate(language)
+
+    try:
+        sale = Sale.objects.filter(language=language)[0]
+        # sale = get_object_or_404(Sale, pk=1)
+        s_list = Seller.objects.filter(visible=True)
+
+    except Exception as e:
+        raise Http404
+
     context = {
         'sale': sale,
     }
-
-    s_list = Seller.objects.filter(visible=True)
 
     search = request.GET.get('search', '')
     if search:
