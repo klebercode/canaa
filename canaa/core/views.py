@@ -39,6 +39,10 @@ def home(request):
     except Exception as e:
         raise Http404
 
+    # redirecionar para mesma pagina na internacionalizacao
+    # next = strip_lang(request.path)
+    # context['next'] = next
+
     context['bannertwo'] = banner
     context['products'] = products
     context['posts'] = posts

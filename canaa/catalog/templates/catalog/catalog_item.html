@@ -33,10 +33,10 @@
                         <div class="thumbnail">
                             <div class="thumbnail-body">
                                 <div class="wrapper-image">
-                                    {% thumbnail product.image "279x279" crop="center" format="PNG" as im %}
-                                    <img src="{{ im.url }}" alt="{{ product.name }}">
+                                    {% thumbnail product.image "279" crop="center" format="PNG" as im %}
+                                        <img src="{{ im.url }}" alt="{{ product.name }}">
                                     {% empty %}
-                                    <p>{% trans 'Sem Imagem' %}</p>
+                                        <img src="http://placehold.it/279x279/cccccc/FFFFFF" alt="{{ product.name }}">
                                     {% endthumbnail %}
                                 </div>
                             </div>

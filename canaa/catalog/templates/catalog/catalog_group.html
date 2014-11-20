@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load i18n %}
+{% load thumbnail %}
 
 {% block nav_product %} class="active"{% endblock %}
 
@@ -35,7 +36,11 @@
                         <div class="thumbnail">
                             <div class="thumbnail-body">
                                 <a href="{{ group.get_absolute_url }}" title="{{ group.name }}">
-                                    <img src="{{ group.image.url }}" alt="{{ group.name }}">
+                                    {% thumbnail group.image "285" crop="center" format="PNG" as im %}
+                                        <img src="{{ im.url }}" alt="{{ group.name }}">
+                                    {% empty %}
+                                        <img src="http://placehold.it/285x285/cccccc/FFFFFF" alt="{{ group.name }}">
+                                    {% endthumbnail %}
                                 </a>
                             </div>
                             <div class="thumbnail-title">
