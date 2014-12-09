@@ -20,12 +20,13 @@ class TalentForm(forms.ModelForm):
             'email': self.cleaned_data['email'],
         }
 
-        email_to = 'talents@polpacanaa.com.br'
-        
+        email_to = 'polpacanaa@polpacanaa.com.br'
+
         message = render_to_string('talent_mail.txt', context)
         message_html = render_to_string('talent_mail.html', context)
-        msg = EmailMultiAlternatives(subject, message, 
-            'no-reply@polpacanaa.com.br', [email_to]) # ['kleberss@gmail.com'])
+        msg = EmailMultiAlternatives(subject, message,
+                                     'no-reply@polpacanaa.com.br', [email_to])
+                                     # ['kleberss@gmail.com'])
 
         msg.attach_alternative(message_html, 'text/html')
         msg.send()
