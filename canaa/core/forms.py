@@ -38,6 +38,7 @@ class ContactForm(forms.Form):
         context = {
             'name': self.cleaned_data['name'],
             'email': self.cleaned_data['email'],
+            'subject': self.cleaned_data['subject'],
             'message': self.cleaned_data['message'],
         }
         message = render_to_string('contact_mail.txt', context)
