@@ -128,12 +128,6 @@ MEDIA_URL = '/media/'
 
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-# DEFAULT_FROM_EMAIL = 'Polpa Canaa <no-reply@canaa.ind.br>'
-# EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=False, cast=bool)
-# EMAIL_HOST = config('EMAIL_HOST', default='localhost')
-# EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
-# EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
-# EMAIL_PORT = config('EMAIL_PORT', default=25, cast=int)
 DEFAULT_FROM_EMAIL = 'Polpa Canaa <no-reply@canaa.ind.br>'
 EMAIL_USE_TLS = True
 EMAIL_HOST = config('EMAIL_HOST')
@@ -145,9 +139,9 @@ EMAIL_PORT = 587
 # grappelli
 GRAPPELLI_ADMIN_TITLE = 'OW7 | CMS'
 
-# GRAPPELLI_EXTENSIONS_NAVBAR = 'pmsal.extensions.Navbar'
+# GRAPPELLI_EXTENSIONS_NAVBAR = 'canaa.extensions.Navbar'
 
-# GRAPPELLI_EXTENSIONS_SIDEBAR = 'pmsal.extensions.Sidebar'
+# GRAPPELLI_EXTENSIONS_SIDEBAR = 'canaa.extensions.Sidebar'
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -163,6 +157,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.static',
     'django.core.context_processors.tz',
-    # 'django.contrib.messages.context_processors.messages',
+    'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.request',
 )
